@@ -8,8 +8,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 # The palette with black:
 cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
-#Palette with red yellow blue
-#redyellowblue <- c("yellow","red","blue")
+#Palette with blue purple orange
+
 redyellowblue <- c("Blue2","Darkorange4","cyan")
 numberseq=c(1,1000)
 runs=1000

@@ -9,10 +9,10 @@ lognormalstdev <- function(mean,stdev) {
 }
 
 source("countryspecificvariables.R")
-source("CountryPopulationall_v3.R")
-source("infectionfunctions_official_person_country_final_v15.R")
-source("IndoorAirPollutionFunction_v11.R")
-source("RelativeRisk_official_country_person_only_v8.R")
+source("CountryPopulation.R")
+source("infectionfunctions.R") #water risk
+source("IndoorAirPollution.R") #PM2.5 concentration
+source("RelativeRisk.R") #air risk
 
 backgroundconcentration= 12
 
@@ -22,10 +22,10 @@ childrenexposureinput=0.628
 
 #define sequence
 numberlength=numberseq
-ecolilogreductionvaluelist=seq(0,7.5,by=0.1) # or to 7.5 # to make log normal graph
+ecolilogreductionvaluelist=seq(0,7.5,by=0.1)
 logreductionseq=seq(1,length(ecolilogreductionvaluelist),by=1)
 
-source("Emptyvariables_v4.R") #update
+source("Emptyvariables.R") #update
 for (i in numberseq)
 {
 print(i)
@@ -538,9 +538,8 @@ write.csv(PMsummarydiffsd,file.path(currentresultspath,paste("PMsummaryDALYssddi
 write.csv(ecolilogreductionvaluelist,file.path(currentresultspath,paste("logreductionsequenceboiling",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
 write.csv(waterDALYplotavg,file.path(currentresultspath,paste("waterDALYplotavg_boiling",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
 #write.csv(logreductionseq,waterDALYplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
-print("finish writing first one")
-#write.csv(logreductionseq,waterRotaplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Rota",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
-#write.csv(logreductionseq,waterCampplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Camp",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
-#write.csv(logreductionseq,waterCryptoplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_crypto",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(logreductionseq,waterRotaplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Rota",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(logreductionseq,waterCampplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Camp",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(logreductionseq,waterCryptoplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_crypto",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
 closeAllConnections()
 
