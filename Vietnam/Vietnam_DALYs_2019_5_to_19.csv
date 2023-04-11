@@ -1,0 +1,6 @@
+measure,location,sex,age,cause,metric,year,val,upper,lower
+DALYs (Disability-Adjusted Life Years),Viet Nam,Both,5 to 19,Chronic obstructive pulmonary disease,Number,2019,5807.479662,7384.028261,4365.88877
+DALYs (Disability-Adjusted Life Years),Viet Nam,Both,5 to 19,Ischemic heart disease,Number,2019,2678.788813,4146.951799,1617.847988
+DALYs (Disability-Adjusted Life Years),Viet Nam,Both,5 to 19,Stroke,Number,2019,14894.39489,20477.78762,11095.51873
+DALYs (Disability-Adjusted Life Years),Viet Nam,Both,5 to 19,Lower respiratory infections,Number,2019,15866.39028,21308.09076,12304.53676
+DALYs (Disability-Adjusted Life Years),Viet Nam,Both,5 to 19,"Tracheal, bronchus, and lung cancer",Number,2019,674.0696342,1135.651302,382.0071243

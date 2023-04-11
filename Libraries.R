@@ -1,0 +1,16 @@
+# has needed libraries to run
+
+library(patchwork)
+library(fishmethods)
+library(pracma)
+library(fishmethods)
+library(data.table)
+library(dplyr)
+library(formattable)
+library(tidyr)
+library(expss)
+library(gt)
+library(tidyverse)
+library(glue)
+library("triangle")
+library("lognorm")

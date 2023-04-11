@@ -1,0 +1,6 @@
+﻿location_id,location_name,sex_id,sex_name,age_group_id,age_group_name,year_id,measure_id,measure_name,metric_id,metric_name,val,upper,lower
+20,Viet Nam,3,both,28,0,2019,44,Population,1,Number,1334052.344,1508940.97,1149855.528
+20,Viet Nam,3,both,49,1,2019,44,Population,1,Number,1358181.925,1536233.836,1170653.461
+20,Viet Nam,3,both,50,2,2019,44,Population,1,Number,1388910.097,1570990.342,1197138.897
+20,Viet Nam,3,both,51,3,2019,44,Population,1,Number,1417070,1602841.89,1221410.674
+20,Viet Nam,3,both,52,4,2019,44,Population,1,Number,1439234.432,1627911.984,1240514.792

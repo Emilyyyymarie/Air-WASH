@@ -1,0 +1,6 @@
+﻿location_id,location_name,sex_id,sex_name,age_group_id,age_group_name,year_id,measure_id,measure_name,metric_id,metric_name,val,upper,lower
+190,Uganda,3,both,28,0,2019,44,Population,1,Number,1508344.57,1649122.95,1358156.659
+190,Uganda,3,both,49,1,2019,44,Population,1,Number,1448185.054,1583348.563,1303987.306
+190,Uganda,3,both,50,2,2019,44,Population,1,Number,1409251.06,1540780.741,1268930.023
+190,Uganda,3,both,51,3,2019,44,Population,1,Number,1377196.667,1505734.614,1240067.329
+190,Uganda,3,both,52,4,2019,44,Population,1,Number,1346772.465,1472470.829,1212672.506

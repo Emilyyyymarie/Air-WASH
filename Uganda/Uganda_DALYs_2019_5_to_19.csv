@@ -1,0 +1,6 @@
+measure,location,sex,age,cause,metric,year,val,upper,lower
+DALYs (Disability-Adjusted Life Years),Uganda,Both,5 to 19,Chronic obstructive pulmonary disease,Number,2019,6301.441217,8280.986201,4590.676992
+DALYs (Disability-Adjusted Life Years),Uganda,Both,5 to 19,Ischemic heart disease,Number,2019,4731.288718,7665.76751,2661.824022
+DALYs (Disability-Adjusted Life Years),Uganda,Both,5 to 19,Stroke,Number,2019,15513.35162,21122.16983,11412.73863
+DALYs (Disability-Adjusted Life Years),Uganda,Both,5 to 19,Lower respiratory infections,Number,2019,76219.10994,111794.8614,53473.37897
+DALYs (Disability-Adjusted Life Years),Uganda,Both,5 to 19,"Tracheal, bronchus, and lung cancer",Number,2019,221.6508368,338.7678257,141.5396726
