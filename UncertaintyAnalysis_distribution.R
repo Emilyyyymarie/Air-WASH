@@ -1,7 +1,7 @@
 number=length(numberseq) #number of random selections
 
 #set variables
-#countrydata<-read.csv(paste(currentcountrypath,"/",country,"_households.csv",sep=""),header=TRUE) 
+
 
 countrydata<-read.csv(paste(currentcountrypath,"/",country,"_households",HAPITCHECK,".csv",sep=""),header=TRUE) 
 averagehousehold =countrydata$ï..averagehousehold
@@ -21,16 +21,11 @@ under5population=countrydata$under5population
 
 
 
-source("Air_water_code_April_2021_uncertainty_v15.R")
-#uncertaintyfunction <- function(exposureinputunc,backgroundinputunc,ecoliinputunc,ecolilogreductioninputunc,waterqualityinputunc,drinkingwateronepersoninputunc,airexchangeinputunc,volumeinputunc,heatvaluewoodinputunc,emissionfactorinputunc,stovepowerinputunc,efficiencyinputunc)
-#baseline
-#baseline=c(mean,min,max)
-#exposureunc=c(0.33,0.35,0.74)
-#exposureunc=c(0.35-(0.35),0.35,0.35+4*0.35)
+source("Air_water_code_uncertainty_code.R")
+
 exposureunc=c(0.33,0.35,0.74)
 
-#backgroundunc=c(8,12,156) #file:///C:/Users/emily/Dropbox/My%20PC%20(LAPTOP-JFPF908E)/Downloads/ijerph-12-08075.pdf
-#backgroundunc=c(0,12,5*12)
+
 backgroundunc=c(30.0,96.3,236.5)#https://www.mdpi.com/1660-4601/15/12/2653
 
 

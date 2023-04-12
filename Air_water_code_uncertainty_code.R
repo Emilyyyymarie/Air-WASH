@@ -14,11 +14,10 @@ lognormalstdev <- function(mean,stdev) {
 }
 
 source("countryspecificvariables.R")
-source("CountryPopulationall_v3.R")
-source("infectionfunctions_official_person_country_final_v15.R")
-source("IndoorAirPollutionFunction_v11.R")
-source("RelativeRisk_UNCERTAINTY_official_country_person_only_UNCERTAINTY_v8.R")
-#source("RelativeRisk_official_country_person_only_v8.R")
+source("CountryPopulation.R")
+source("infectionfunctions.R")
+source("IndoorAirPollution.R")
+source("RelativeRisk.R")
 
 
 ###
