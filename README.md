@@ -15,4 +15,4 @@ Results:
 Results is organzied by countries, with a folder for Uganda and Vietnam
 Uncertainty has it's own folder in the results folder.
 
-Air_WASH_Master_Uncertainty runs the Uncertainty code (UncertaintyAnalysis_distribution and Air_water_code_uncertainty) for the specified country. In Uncertainty_Analysis_distribution, the distributions of interest to be run through the uncertainty code are provided, and can be changed by teh user. These distributions are based on the literature.  In Air_water_code_uncertainty_code, using the distribution inputs, the net difference in DALYs, water DALYs, air DALYs, and water heating is provided. 
+Air_WASH_Master_Uncertainty runs the Uncertainty code (UncertaintyAnalysis_distribution and Air_water_code_uncertainty) for the specified country. In Uncertainty_Analysis_distribution, the distributions of interest to be run through the uncertainty code are provided, and can be changed by the user. These distributions are based on the literature.  In Air_water_code_uncertainty_code, using the distribution inputs, the net difference in DALYs, water DALYs, air DALYs, and water heating is provided. 
