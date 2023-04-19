@@ -1,6 +1,10 @@
 # Air and WASH Health Risk comparison
 
- This code in R is written to compare the health risks from drinking water and indoor air pollution when boiling drinking water with various types of fuels. It can be run for various countries. Right now, data to run for two focus countries, Uganda and Vietnam, is provided. Data for additional countries can be added.
+## Introduction
+This code in R is written to compare the health risks from drinking water and indoor air pollution when boiling drinking water with various types of fuels. It can be run for various countries. Right now, data to run for two focus countries, Uganda and Vietnam, is provided. Data for additional countries can be added.
+
+## Authors
+Emily Floess, Ayse Ercumen, Angela Harris, Andrew Grieshop, NC State University
  
 ## Country Level Inputs
 A folder is created for each country.
@@ -65,12 +69,12 @@ There are files divided by adults and children including:
 2) DALYs from Air Pollution
 3) DALYs from Drinking water
 
-##Plotting
+## Plotting
 Master_Script_Plotting runs the code to produce the plots
 Given a country, this calls the file AirWASHPlots_Indicatedcountry_adult_and_child
 This reads in the results, and produces plots of the indoor air pollution, drinking water DALYs, IAP DALYs, and plot of the DALYs difference.
 
-##Uncertainty
+## Uncertainty
 Air_WASH_Master_Uncertainty runs the code to produce the uncertainty outputs.
 For a given number of runs, input population, country of interest, and person of interest, it runs the UncertaintyAnalysis_distribution file. This file has the given distributions to run the uncertainty. The uncertainty ranges are calculated for the low, average and high values of the distributions, and then plotted.
 
