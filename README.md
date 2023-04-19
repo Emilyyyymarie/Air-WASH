@@ -9,21 +9,21 @@ Emily Floess, Ayse Ercumen, Angela Harris, Andrew Grieshop, NC State University
 ## Country Level Inputs
 A folder is created for each country.
 Inside the folder the following files are contained:
-DALYs ages 5 to 19
-DALYs ages 20 plus
-DALYs under 5
-household demographics
-population
+1) DALYs ages 5 to 19
+2) DALYs ages 20 plus
+3) DALYs under 5
+4) household demographics
+5) population
 The data for these files comes from the GBD
 
-##Required Packages & Libraries
+## Required Packages & Libraries
 Packages.R contains the required packages for the code. Only needs to be run once.
 Libraries.R contains the required libraries for the code. Only needs to be run once.
 
-##Health Files
+## Health Files
 Files containing data on ALRI, COPD, IHD, LC and stroke are provided in the health folder
 
-##Running the code
+## Running the code
 Air_WASH_Master_Script is used to run the code. 
 Examples are given for Uganda and Vietnam, adults and children.
 In this , you can set the following:
@@ -56,10 +56,10 @@ This file generates a random distribution of the ages of people in a country
 ### infectionfunctions
 This calculates the DALYs for Rotavirus, cryptosporidium, and campylobacter
 
-###IndoorAirPollution
+### IndoorAirPollution
 This calculates the 24 hour kitchen PM2.5 concentration uses the air pollution box model
 
-###RelativeRisk
+### RelativeRisk
 This code calculates the DALYs for LC, ALRI, COPD, Stroke, and IHD
 
 ## Navigating Results
