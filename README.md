@@ -59,23 +59,20 @@ This calculates the 24 hour kitchen PM2.5 concentration uses the air pollution b
 This code calculates the DALYs for LC, ALRI, COPD, Stroke, and IHD
 
 ## Navigating Results
-
-
-
-
-
-This code calculate the air and water health risks for two focus countries. 
-
-Country data: Country data is contained in a folder with that country's name. Currently, the data for Uganda and Vietnam are provided. This includes the country wide DALYs, population, and household demographics.
-
-There are three master scripts:
-
-1) Air_WASH_Master_Script runs the code to calculate the health impacts.
-2) Air_WASH_Master_Uncertainty runs the code to produce the uncertainty outputs.
-3) Master_Script_Plotting runs the code to produce the plots
-
-Results:
 Results is organzied by countries, with a folder for Uganda and Vietnam
-Uncertainty has it's own folder in the results folder.
+There are files divided by adults and children including:
+1) PM2.5 data
+2) DALYs from Air Pollution
+3) DALYs from Drinking water
 
-Air_WASH_Master_Uncertainty runs the Uncertainty code (UncertaintyAnalysis_distribution and Air_water_code_uncertainty) for the specified country. In Uncertainty_Analysis_distribution, the distributions of interest to be run through the uncertainty code are provided, and can be changed by the user. These distributions are based on the literature.  In Air_water_code_uncertainty_code, using the distribution inputs, the net difference in DALYs, water DALYs, air DALYs, and water heating is provided. 
+##Plotting
+Master_Script_Plotting runs the code to produce the plots
+Given a country, this calls the file AirWASHPlots_Indicatedcountry_adult_and_child
+This reads in the results, and produces plots of the indoor air pollution, drinking water DALYs, IAP DALYs, and plot of the DALYs difference.
+
+##Uncertainty
+Air_WASH_Master_Uncertainty runs the code to produce the uncertainty outputs.
+For a given number of runs, input population, country of interest, and person of interest, it runs the UncertaintyAnalysis_distribution file. This file has the given distributions to run the uncertainty. The uncertainty ranges are calculated for the low, average and high values of the distributions, and then plotted.
+
+
+
