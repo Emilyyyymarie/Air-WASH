@@ -1,10 +1,9 @@
 
 
 if (personofinterest=="adult") {
-  print(paste(currentcountrypath,"/",country,"_population_GBD_adult_v2.csv",sep=""))
-  countrypop=read.csv2(paste(currentcountrypath,"/",country,"_population_GBD_adult_v2.csv",sep=""),header=TRUE,sep=",")
+  countrypop=read.csv2(paste(currentcountrypath,"/",country,"_population_GBD_adult.csv",sep=""),header=TRUE,sep=",")
 } else if  (personofinterest == "child") {
-  countrypop=read.csv2(paste(currentcountrypath,"/",country,"_population_GBD_child_v2.csv",sep=""),header=TRUE,sep=",")
+  countrypop=read.csv2(paste(currentcountrypath,"/",country,"_population_GBD_child.csv",sep=""),header=TRUE,sep=",")
 } else {
   print("error")
   print(stopstoppopulation)
@@ -23,7 +22,7 @@ averagehousehold =countrydata$ï..averagehousehold
 pplperhousehold=averagehousehold
 numberchildrenunder5perHH=countrydata$childrenunder5perhh
 numberadultsperHH=countrydata$adultsperhh
-percentsolidfueluse=countrydata$dirtyfueluse #might not work
+percentsolidfueluse=countrydata$dirtyfueluse 
 households=inputpopulation/averagehousehold
 
 lifeexpectancywomen = countrydata$lifeexpectancywomen
@@ -39,7 +38,7 @@ adultperhousehold=cookperhousehold+noncookperhousehold
 under5population=countrydata$under5population
 
 ###
-
+HAPITCHECK=""
 countryDALYparameters20plus <- read.table(paste(currentcountrypath,"/",country,"_DALYs_2019_20_plus",HAPITCHECK,".csv",sep=""), sep=",",header=TRUE)
 countryDALYparametersunder5 <- read.table(paste(currentcountrypath,"/",country,"_DALYs_2019_under5",HAPITCHECK,".csv",sep=""), sep=",",header=TRUE)
 countryDALYparameters_5_to_19 <- read.table(paste(currentcountrypath,"/",country,"_DALYs_2019_5_to_19",HAPITCHECK,".csv",sep=""), sep=",",header=TRUE)
@@ -106,35 +105,35 @@ StrokeDALYlower_20plus = DALYslower_20plus[3]
 
 ###
 print("get COPD, ALRI,IHD,LC Stroke")
-CRparametersCOPD <- read.table("COPD.csv", sep=",",header=TRUE)
+CRparametersCOPD <- read.table("Health/COPD.csv", sep=",",header=TRUE)
 alphaCOPD <-CRparametersCOPD$alpha
 betaCOPD <-CRparametersCOPD$beta
 deltaCOPD <-CRparametersCOPD$delta
 zcfCOPD <-CRparametersCOPD$zcf
 
 #ALRI
-CRparametersALRI <- read.table("ALRI.csv", sep=",",header=TRUE)
+CRparametersALRI <- read.table("Health/ALRI.csv", sep=",",header=TRUE)
 alphaALRI <-CRparametersALRI$alpha
 betaALRI <-CRparametersALRI$beta
 deltaALRI <-CRparametersALRI$delta
 zcfALRI <-CRparametersALRI$zcf
 
 #IHD
-CRparametersIHD <- read.table("IHD.csv", sep=",",header=TRUE)
+CRparametersIHD <- read.table("Health/IHD.csv", sep=",",header=TRUE)
 alphaIHD <-CRparametersIHD$alpha
 betaIHD <-CRparametersIHD$beta
 deltaIHD <-CRparametersIHD$delta
 zcfIHD <-CRparametersIHD$zcf
 
 #LC
-CRparametersLC <- read.table("LC.csv", sep=",",header=TRUE)
+CRparametersLC <- read.table("Health/LC.csv", sep=",",header=TRUE)
 alphaLC <-CRparametersLC$alpha
 betaLC <-CRparametersLC$beta
 deltaLC <-CRparametersLC$delta
 zcfLC <-CRparametersLC$zcf
 
 #stroke
-CRparametersstroke <- read.table("stroke.csv", sep=",",header=TRUE)
+CRparametersstroke <- read.table("Health/stroke.csv", sep=",",header=TRUE)
 alphastroke <-CRparametersstroke$alpha
 betastroke <-CRparametersstroke$beta
 deltastroke <-CRparametersstroke$delta

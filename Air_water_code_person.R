@@ -14,7 +14,7 @@ source("infectionfunctions.R") #water risk
 source("IndoorAirPollution.R") #PM2.5 concentration
 source("RelativeRisk.R") #air risk
 
-backgroundconcentration= 12
+backgroundconcentration= 12 #ug/m^3
 
 womenexposureinput=0.742
 menexposureinput=0.45
@@ -28,7 +28,6 @@ logreductionseq=seq(1,length(ecolilogreductionvaluelist),by=1)
 source("Emptyvariables.R") #update
 for (i in numberseq)
 {
-print(i)
 cryptokvalue[i]=sample(rlnorm(numberlength,lognormalmean((3.44*10^-1),(2.02)),lognormalstdev((3.44*10^-1),(2.02))),1)
 cryptoratiovalue[i]=sample(rlnorm(numberlength,lognormalmean((1.13*10^-6),(9.26*10^-6)),lognormalstdev((1.13*10^-6),(9.26*10^-6))),1)
 rotaalphavalue[i]=sample(rlnorm(numberlength,lognormalmean((2.48*10^-1),(1.46*10^-1)),lognormalstdev((2.48*10^-1),(1.46*10^-1))),1)
@@ -231,6 +230,7 @@ for (a in logreductionseq)
 
 #write differences to csv
 
+print("writing")
 ###########################
 write.csv(waterDALYsnoboilingdiff,file.path(currentresultspath,paste("waterDALYsnoboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
 write.csv(waterDALYslabboilingdiff,file.path(currentresultspath,paste("waterDALYslabboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)

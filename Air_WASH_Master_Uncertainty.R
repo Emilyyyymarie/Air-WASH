@@ -1,5 +1,6 @@
-print("uncertainty")
+
 rm(list = ls())
+setwd("C:/Users/emily/Dropbox/Air WASH/Air-WASH/")
 setwd("C:/Users/emily/Dropbox/Air WASH/Air-WASH/")
 
 #source("Packages.R")
@@ -7,7 +8,7 @@ source("Libraries.R")
 
 variable = c()
 
-numberseq=seq(1,1000)
+numberseq=seq(1,30000)
 numberlength=length(numberseq)
 inputpopulation=10000
 
