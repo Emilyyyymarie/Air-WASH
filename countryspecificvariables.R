@@ -18,7 +18,8 @@ totalpopulation=sum(agepop)
 
 ####
 countrydata<-read.csv(paste(currentcountrypath,"/",country,"_households.csv",sep=""),header=TRUE) 
-averagehousehold =countrydata$ï..averagehousehold
+#averagehousehold =countrydata$?..averagehousehold
+averagehousehold =countrydata$ averagehousehold
 pplperhousehold=averagehousehold
 numberchildrenunder5perHH=countrydata$childrenunder5perhh
 numberadultsperHH=countrydata$adultsperhh

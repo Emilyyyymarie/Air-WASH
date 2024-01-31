@@ -1,4 +1,10 @@
+setwd("C:/Users/emily/Dropbox/Air WASH/Air-WASH")
 
+#If running for the first time, run:
+#source("Packages.R")
+source("Libraries.R")
+
+#set working directory
 
 print("Vietnam child low")
 rm(list = ls())

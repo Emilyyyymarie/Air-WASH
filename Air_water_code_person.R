@@ -24,6 +24,8 @@ childrenexposureinput=0.628
 numberlength=numberseq
 ecolilogreductionvaluelist=seq(0,7.5,by=0.1)
 logreductionseq=seq(1,length(ecolilogreductionvaluelist),by=1)
+#ecolilevel= logspace(0,log(21200,base=10),n=15)#per 100 mL  c(0,1,10,11,50,80,100,101,150,200,300)#c(lake,well1,well2,well3,borehole,kiosk1,kiosk2,hh1,hh2) #old before switched distributions                  
+#waterqualityseq=seq(1,length(ecolilevel),by=1) ## new
 
 source("Emptyvariables.R") #update
 for (i in numberseq)
@@ -41,13 +43,13 @@ if (waterqualitylevel == "safe"){
     ecolilevel[i]=0
   }
 if (waterqualitylevel == "low"){
-    ecolilevel[i]=sample(runif(numberseq, min = 1, max = 10))
+    ecolilevel[i]=sample(runif(numberseq, min = 1, max = 10),1)
   }
 if (waterqualitylevel == "medium"){
-    ecolilevel[i]=sample(runif(numberseq, min = 11, max = 100))
+    ecolilevel[i]=sample(runif(numberseq, min = 11, max = 100),1)
   }
 if (waterqualitylevel == "high"){
-    ecolilevel[i]=sample(runif(numberseq, min = 101, max = 1000)) 
+    ecolilevel[i]=sample(runif(numberseq, min = 101, max = 1000),1) 
   }
 
 ageatdeath[i]=countryageperson()
@@ -200,8 +202,7 @@ waterDALYsmoderateboiling[i]=waterDALYs(drinkingwateronepersonvolume[i],ecolilev
 waterDALYsworseboiling[i]=waterDALYs(drinkingwateronepersonvolume[i],ecolilevel[i],0.464,inputpopulation,ageatdeath[i],cryptokvalue[i],cryptoratiovalue[i],rotaalphavalue[i],rotaNfiftyvalue[i],rotaratiovalue[i],campalphavalue[i],campNfiftyvalue[i],campratiovalue[i])
 waterDALYsbadzeroboiling[i]=waterDALYs(drinkingwateronepersonvolume[i],ecolilevel[i],0.048,inputpopulation,ageatdeath[i],cryptokvalue[i],cryptoratiovalue[i],rotaalphavalue[i],rotaNfiftyvalue[i],rotaratiovalue[i],campalphavalue[i],campNfiftyvalue[i],campratiovalue[i])
 waterDALYsnegativeboiling[i]=waterDALYs(drinkingwateronepersonvolume[i],ecolilevel[i],-0.208,inputpopulation,ageatdeath[i],cryptokvalue[i],cryptoratiovalue[i],rotaalphavalue[i],rotaNfiftyvalue[i],rotaratiovalue[i],campalphavalue[i],campNfiftyvalue[i],campratiovalue[i])
-
-###################################################Calculating Differences ######################################################
+########################from old code
 
 #water boiling
 waterDALYsnoboilingdiff[i]=waterDALYsnoboiling[i]-waterDALYsnoboiling[i]
@@ -232,14 +233,62 @@ for (a in logreductionseq)
 
 print("writing")
 ###########################
-write.csv(waterDALYsnoboilingdiff,file.path(currentresultspath,paste("waterDALYsnoboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
-write.csv(waterDALYslabboilingdiff,file.path(currentresultspath,paste("waterDALYslabboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
-write.csv(waterDALYsgoodboilingdiff,file.path(currentresultspath,paste("waterDALYsgoodboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
-write.csv(waterDALYsineffectiveboilingdiff,file.path(currentresultspath,paste("ineffectiveboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
-write.csv(waterDALYsmoderateboilingdiff,file.path(currentresultspath,paste("waterDALYsmoderateboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
-write.csv(waterDALYsworseboilingdiff,file.path(currentresultspath,paste("waterDALYsworseboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
-write.csv(waterDALYsbadzeroboilingdiff,file.path(currentresultspath,paste("waterDALYsbadzeroboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
-write.csv(waterDALYsnegativeboilingdiff,file.path(currentresultspath,paste("waterDALYsnegativeboilingdiff",country,personofinterest,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsnoboilingdiff,file.path(currentresultspath,paste("waterDALYsnoboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYslabboilingdiff,file.path(currentresultspath,paste("waterDALYslabboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsgoodboilingdiff,file.path(currentresultspath,paste("waterDALYsgoodboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsineffectiveboilingdiff,file.path(currentresultspath,paste("ineffectiveboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsmoderateboilingdiff,file.path(currentresultspath,paste("waterDALYsmoderateboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsworseboilingdiff,file.path(currentresultspath,paste("waterDALYsworseboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsbadzeroboilingdiff,file.path(currentresultspath,paste("waterDALYsbadzeroboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsnegativeboilingdiff,file.path(currentresultspath,paste("waterDALYsnegativeboilingdiff",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+print("Finish writing")
+
+write.csv(waterDALYsnoboiling,file.path(currentresultspath,paste("waterDALYsnoboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYslabboiling,file.path(currentresultspath,paste("waterDALYslabboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsgoodboiling,file.path(currentresultspath,paste("waterDALYsgoodboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsineffectiveboiling,file.path(currentresultspath,paste("waterDALYsineffectiveboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsmoderateboiling,file.path(currentresultspath,paste("waterDALYsmoderateboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsworseboiling,file.path(currentresultspath,paste("waterDALYsworseboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsbadzeroboiling,file.path(currentresultspath,paste("waterDALYsbadzeroboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterDALYsnegativeboiling,file.path(currentresultspath,paste("waterDALYsnegativeboilingvalues",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+
+#charcoal
+write.csv(cookingcharcoalDALYs,file.path(currentresultspath,paste("cookingcharcoalDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterheatingcharcoalDALYs,file.path(currentresultspath,paste("waterheatingcharcoalDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(watercookingcharcoalDALYs,file.path(currentresultspath,paste("watercookingcharcoalDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltacookheatcharcoalDALYs,file.path(currentresultspath,paste("deltacookheatcharcoalDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltaheatcharcoalDALYs,file.path(currentresultspath,paste("deltaheatcharcoalDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+
+#improved
+write.csv(cookingimprovedDALYs,file.path(currentresultspath,paste("cookingimprovedDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterheatingimprovedDALYs,file.path(currentresultspath,paste("waterheatingimprovedDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(watercookingimprovedDALYs,file.path(currentresultspath,paste("watercookingimprovedDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltacookheatimprovedDALYs,file.path(currentresultspath,paste("deltacookheatimprovedDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltaheatimprovedDALYs,file.path(currentresultspath,paste("deltaheatimprovedDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+
+#LPG
+write.csv(cookingLPGDALYs,file.path(currentresultspath,paste("cookingLPGDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterheatingLPGDALYs,file.path(currentresultspath,paste("waterheatingLPGDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(watercookingLPGDALYs,file.path(currentresultspath,paste("watercookingLPGDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltacookheatLPGDALYs,file.path(currentresultspath,paste("deltacookheatLPGDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltaheatLPGDALYs,file.path(currentresultspath,paste("deltaheatLPGDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+
+#Clean
+write.csv(cookingCleanDALYs,file.path(currentresultspath,paste("cookingCleanDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterheatingCleanDALYs,file.path(currentresultspath,paste("waterheatingCleanDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(watercookingCleanDALYs,file.path(currentresultspath,paste("watercookingCleanDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltacookheatCleanDALYs,file.path(currentresultspath,paste("deltacookheatCleanDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltaheatCleanDALYs,file.path(currentresultspath,paste("deltaheatCleanDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+
+#Minimoto
+write.csv(cookingminimotoDALYs,file.path(currentresultspath,paste("cookingminimotoDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(waterheatingminimotoDALYs,file.path(currentresultspath,paste("waterheatingminimotoDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(watercookingminimotoDALYs,file.path(currentresultspath,paste("watercookingminimotoDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltacookheatminimotoDALYs,file.path(currentresultspath,paste("deltacookheatminimotoDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+write.csv(deltaheatminimotoDALYs,file.path(currentresultspath,paste("deltaheatminimotoDALYs",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+
+print("Finish writing")
+
 
 
 ##########################################################################
@@ -261,6 +310,7 @@ meanworseboilingdiff=round(mean(waterDALYsworseboilingdiff),digits=2)
 meanbadzeroboilingdiff=round(mean(waterDALYsbadzeroboilingdiff),digits=2)
 meannegativeboilingdiff=round(mean(waterDALYsnegativeboilingdiff),digits=2)
 
+print("finish taking averages")
 sdlabboiling=round(sd(waterDALYslabboiling),digits=2)
 sdgoodboiling=round(sd(waterDALYsgoodboiling),digits=2)
 sdineffectiveboiling=round(sd(waterDALYsineffectiveboiling),digits=2)
@@ -278,6 +328,8 @@ sdworseboilingdiff=round(sd(waterDALYsworseboilingdiff),digits=2)
 sdbadzeroboilingdiff=round(sd(waterDALYsbadzeroboilingdiff),digits=2)
 sdnegativeboilingdiff=round(sd(waterDALYsnegativeboilingdiff),digits=2)
 sdnoboilingdiff=round(sd(waterDALYsnoboilingdiff),digits=2)
+
+print("finish taking standard deviations")
 
 avgminimotocooking=mean(Minimotocooking)
 avgminimotowatercooking=mean(Minimotowatercooking)
@@ -359,6 +411,7 @@ sdcleanwatercooking=sd(cleanwatercooking)
 sdcleanwaterheating=sd(cleanwaterheating)
 sdcleanstovenumber=sd(cleanstovenumber)
 
+print("start log reduction sequence")
 for (a in logreductionseq)
   {
 waterDALYplotavg[a]=mean(waterDALYlogplot[,a])
@@ -367,28 +420,33 @@ waterCampplotavg[a]=mean(waterCampDALYsresults[,a])
 waterCryptoplotavg[a]=mean(waterCryptoDALYsresults[,a])
 
 }
+print("finish log reduction sequence")
 
 AirPMaveragedataframe=c()
 AirPMaveragedataframe <- cbind(avgminimotocooking,avgminimotowaterheating,avgminimotowatercooking,avgsmokeycooking,avgsmokeywaterheating,avgsmokeywatercooking,avgimprovedcooking,avgimprovedwaterheating,avgimprovedwatercooking,avgLPGcooking,avgLPGwaterheating,avgLPGwatercooking,avgCharcoalcooking,avgCharcoalwaterheating,avgCharcoalwatercooking,avgcleancooking,avgcleanwaterheating,avgcleanwatercooking)
 colnames(AirPMaveragedataframe) <- c("avgminimotocooking","avgminimotowaterheating","avgminimotowatercooking","avgsmokeycooking","avgsmokeywaterheating","avgsmokeywatercooking","avgimprovedcooking","avgimprovedwaterheating","avgimprovedwatercooking","avgLPGcooking","avgLPGwaterheating","avgLPGwatercooking","avgcharcoalcooking","avgcharcoalwaterheating","avgcharcoalwatercooking","avgCleancooking","avgCleanwaterheating","avgCleanwatercooking")
 write.csv(AirPMaveragedataframe,file.path(currentresultspath,paste("airPMaveragedata",country,personofinterest,".csv",sep="")),row.names=FALSE)
 
+print("writing 1")
 Stovenumberdataframe=c()
 Stovenumberdataframe <-cbind(avgminimotostovenumber,avgsmokeystovenumber,avgimprovedstovenumber,avgLPGstovenumber,avgCharcoalstovenumber,avgcleanstovenumber)
 colnames(Stovenumberdataframe)<-cbind("minimotostovenumber","smokeystovenumber","improvedstovenumber","LPGstovenumber","Charcoalstovenumber","cleanstovenumber")
 write.csv(Stovenumberdataframe,file.path(currentresultspath,paste("stovenumberaveragedata",country,personofinterest,".csv",sep="")),row.names=FALSE)
 
+print("writing 2")
 Stovesddataframe=c()
 Stovesddataframe <-cbind(sdminimotostovenumber,sdsmokeystovenumber,sdimprovedstovenumber,sdLPGstovenumber,sdCharcoalstovenumber,sdcleanstovenumber)
 colnames(Stovesddataframe)<-cbind("minimotostovesd","smokeystovesd","improvedstovesd","LPGstovesd","Charcoalstovesd","cleanstovesd")
 write.csv(Stovesddataframe,file.path(currentresultspath,paste("stovenumbersddata",country,personofinterest,".csv",sep="")),row.names=FALSE)
 
+print("writing 3")
 AirPMsddataframe=c()
 AirPMsddataframe<- cbind(sdminimotocooking,sdminimotowaterheating,sdminimotowatercooking,sdsmokeycooking,sdsmokeywaterheating,sdsmokeywatercooking,sdimprovedcooking,sdimprovedwaterheating,sdimprovedwatercooking,sdLPGcooking,sdLPGwaterheating,sdLPGwatercooking,sdCharcoalcooking,sdCharcoalwaterheating,sdCharcoalwatercooking,sdcleancooking,sdcleanwaterheating,sdcleanwatercooking)
 colnames(AirPMsddataframe) <- cbind("sdminimotocookingDALYs","sdminimotowaterheating","sdminimotowatercooking","sdsmokeycooking","sdsmokeywaterheating","sdsmokeywatercooking","sdimprovedcooking","sdimprovedwaterheating","sdimprovedwatercooking","sdLPGcooking","sdLPGwaterheating","sdLPGwatercooking","sdcharcoalcooking","sdcharcoalwaterheating","sdcharcoalwatercooking","sdCleancooking","sdCleanwaterheating","sdCleanwatercooking")
 write.csv(AirPMsddataframe,file.path(currentresultspath,paste("airPMsddata",country,personofinterest,".csv",sep="")),row.names=FALSE)
 
 # taking averages for air #DALYs
+print("air average DALYs")
 meanminimotocookingDALYs=round(mean(cookingminimotoDALYs),digits=0)
 meanminimotowaterheatingDALYs=round(mean(waterheatingminimotoDALYs),digits=0)
 meanminimotowatercookingDALYs=round(mean(watercookingminimotoDALYs),digits=0)
@@ -428,6 +486,7 @@ meanCleanwatercookingDALYsdiff=round(mean(deltacookheatCleanDALYs),digits=0)
 
 ##########
 #standard deviations
+print("standard deviations air")
 sdminimotocookingDALYs=round(sd(cookingminimotoDALYs),digits=2)
 sdminimotowaterheatingDALYs=round(sd(waterheatingminimotoDALYs),digits=2)
 sdminimotowatercookingDALYs=round(sd(watercookingminimotoDALYs),digits=2)
@@ -465,6 +524,7 @@ sdCleanwatercookingDALYs=round(sd(watercookingCleanDALYs),digits=2)
 sdCleanwaterheatingDALYsdiff=round(sd(deltaheatCleanDALYs),digits=2)
 sdCleanwatercookingDALYsdiff=round(sd(deltacookheatCleanDALYs),digits=2)
 
+print("write water summary")
 
 watersummary<-cbind(meannoboiling,meanlabboiling,meangoodboiling,meanineffectiveboiling,
                         meanmoderateboiling,meanworseboiling,meanbadzeroboiling,meannegativeboiling)
@@ -485,6 +545,19 @@ watersummarydiffsd=cbind(sdlabboilingdiff,sdgoodboilingdiff,sdineffectiveboiling
 write.csv(watersummarysd,file.path(currentresultspath,paste("waterDALYsdatasd",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
 write.csv(watersummarydiffsd,file.path(currentresultspath,paste("waterDALYsdatadiffsd",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
 
+##updated code below
+
+watersummary<-cbind(ecolilevel,meannoboiling,meanlabboiling,meangoodboiling,meanineffectiveboiling,
+                    meanmoderateboiling,meanworseboiling,meanbadzeroboiling,meannegativeboiling)
+write.csv(watersummary,file.path(currentresultspath,paste("waterDALYsdata",country,personofinterest,".csv",sep="")),row.names=FALSE)
+
+watersummarysd=cbind(ecolilevel,sdnoboiling,sdlabboiling,sdgoodboiling,sdineffectiveboiling,
+                     sdmoderateboiling,sdworseboiling,sdbadzeroboiling,sdnegativeboiling)
+
+write.csv(watersummarysd,file.path(currentresultspath,paste("waterDALYsdatasd",country,personofinterest,".csv",sep="")),row.names=FALSE)
+#####################################
+
+print("PM summary")
 PMsummary=cbind(meanminimotocookingDALYs,meanminimotowaterheatingDALYs,
                     meanminimotowatercookingDALYs,meansmokeycookingDALYs,meansmokeywaterheatingDALYs,
                     meansmokeywatercookingDALYs,meanimprovedcookingDALYs,meanimprovedwaterheatingDALYs,
@@ -534,12 +607,20 @@ write.csv(PMsummarydiffsd,file.path(currentresultspath,paste("PMsummaryDALYssddi
 
 
 ###############################################################################################
-
+print("more writing")
 write.csv(ecolilogreductionvaluelist,file.path(currentresultspath,paste("logreductionsequenceboiling",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+print("write ecoli log reduction")
 write.csv(waterDALYplotavg,file.path(currentresultspath,paste("waterDALYplotavg_boiling",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+print("write water DALYs plot")
+#
 #write.csv(logreductionseq,waterDALYplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
-write.csv(logreductionseq,waterRotaplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Rota",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
-write.csv(logreductionseq,waterCampplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Camp",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
-write.csv(logreductionseq,waterCryptoplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_crypto",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+print("write check")
+#temperarily comment out below******
+#write.csv(logreductionseq,waterRotaplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Rota",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+print("write water rota plot avg")
+#*#write.csv(logreductionseq,waterCampplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_Camp",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+print("write water camp plot avg")
+#*#write.csv(logreductionseq,waterCryptoplotavg,file.path(currentresultspath,paste("logreductionsequenceboiling_crypto",country,personofinterest,waterqualitylevel,".csv",sep="")),row.names=FALSE)
+print("finish writing")
 closeAllConnections()
 

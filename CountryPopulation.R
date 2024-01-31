@@ -1,8 +1,8 @@
 
 
 agebin=c()
-
-ageseq=seq(2,(length(agepop)-1))
+#these age bins are funny
+ageseq=seq(2,(length(agepop)))
 agebin[1]=agepop[1]
 for (i in ageseq)
 {
@@ -13,9 +13,11 @@ countryageperson<-function()
 {
 randomage=sample(1:totalpopulation,1)
 printage=min((which((agebin-randomage)>0)))
+
 if (printage==Inf)
     {
 printage=length(agebin)
+print(sodgubsdougb)
     }
 else
 {
@@ -30,6 +32,7 @@ if (personofinterest=="adult") {
   print("error")
   print(stopstoppopulation)
 }
+
 return(actualage)
 }
 
