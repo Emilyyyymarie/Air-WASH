@@ -790,7 +790,8 @@ PM2.5concentration <- function(heatvalueinput,emissionfactorgkginput,stovepowerM
                       print("not cooking too short!!!!")
                       print("ERROR")
                       print("notcooking")
-                      print(sgoewubgowugb)
+                      print("Set stove number to 21")
+                      stovenumber=21
                     }
                     
                     

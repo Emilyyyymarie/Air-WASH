@@ -1,10 +1,11 @@
+#updated February 5, 2024
 number=length(numberseq) #number of random selections
 
 #set variables
 
 
 countrydata<-read.csv(paste(currentcountrypath,"/",country,"_households",HAPITCHECK,".csv",sep=""),header=TRUE) 
-averagehousehold =countrydata$ï..averagehousehold
+averagehousehold =countrydata$averagehousehold
 numberchildrenunder5perHH=countrydata$childrenunder5perhh
 numberadultsperHH=countrydata$adultsperhh
 percentsolidfueluse=countrydata$dirtyfueluse #might not work
@@ -156,6 +157,12 @@ campratiovalueunc=c(min(campratiovaluedist),mean(campratiovaluedist),max(camprat
 
 #ageatdeathinputunc,cryptokvalueunc,cryptoratiovalueunc,rotaalphavalueunc,rotaNfiftyvalueunc,rotaratiovalueunc,campalphavalueunc,campNfiftyvalueunc,campratiovalueunc
 
+
+emissionrateresults=c
+
+uncertaintyseq=c(1,2,3)
+#######
+
 uncertaintyresults=c()
 backgroundresults=c()
 ecolilevelresults=c()
@@ -170,10 +177,6 @@ efficiencyresults=c()
 energyresults=c()
 
 exposureresults=c()
-emissionrateresults=c
-
-uncertaintyseq=c(1,2,3)
-
 
 ageresults=c()
 cryptokvalueresults=c()
@@ -184,6 +187,31 @@ rotaratiovalueresults=c()
 campalphavalueresults=c()
 campNfiftyvalueresults=c()
 campratiovalueresults=c()
+
+uncertaintyresultsnetdiff=c()
+backgroundresultsnetdiff=c()
+ecolilevelresultsnetdiff=c()
+logreductionresultsnetdiff=c()
+drinkingwaterresultsnetdiff=c()
+airexchangeresultsnetdiff=c()
+volumeresultsnetdiff=c()
+heatvalueresultsnetdiff=c()
+emissionfactorresultsnetdiff=c()
+stovepowerresultsnetdiff=c()
+efficiencyresultsnetdiff=c()
+energyresultsnetdiff=c()
+
+exposureresultsnetdiff=c()
+
+ageresultsnetdiff=c()
+cryptokvalueresultsnetdiff=c()
+cryptoratiovalueresultsnetdiff=c()
+rotaalphavalueresultsnetdiff=c()
+rotaNfiftyvalueresultsnetdiff=c()
+rotaratiovalueresultsnetdiff=c()
+campalphavalueresultsnetdiff=c()
+campNfiftyvalueresultsnetdiff=c()
+campratiovalueresultsnetdiff=c()
 
 
 
@@ -232,6 +260,106 @@ campalphavalueair=c()
 campNfiftyvalueair=c()
 campratiovalueair=c()
 
+##########
+#############################
+uncertaintyresultsdelta=c()
+backgroundresultsdelta=c()
+ecolilevelresultsdelta=c()
+logreductionresultsdelta=c()
+drinkingwaterresultsdelta=c()
+airexchangeresultsdelta=c()
+volumeresultsdelta=c()
+heatvalueresultsdelta=c()
+emissionfactorresultsdelta=c()
+stovepowerresultsdelta=c()
+efficiencyresultsdelta=c()
+energyresultsdelta=c()
+
+exposureresultsdelta=c()
+
+ageresultsdelta=c()
+cryptokvalueresultsdelta=c()
+cryptoratiovalueresultsdelta=c()
+rotaalphavalueresultsdelta=c()
+rotaNfiftyvalueresultsdelta=c()
+rotaratiovalueresultsdelta=c()
+campalphavalueresultsdelta=c()
+campNfiftyvalueresultsdelta=c()
+campratiovalueresultsdelta=c()
+
+###
+uncertaintyresultsnetdiffdelta=c()
+backgroundresultsnetdiffdelta=c()
+ecolilevelresultsnetdiffdelta=c()
+logreductionresultsnetdiffdelta=c()
+drinkingwaterresultsnetdiffdelta=c()
+airexchangeresultsnetdiffdelta=c()
+volumeresultsnetdiffdelta=c()
+heatvalueresultsnetdiffdelta=c()
+emissionfactorresultsnetdiffdelta=c()
+stovepowerresultsnetdiffdelta=c()
+efficiencyresultsnetdiffdelta=c()
+energyresultsnetdiffdelta=c()
+
+exposureresultsnetdiffdelta=c()
+
+ageresultsnetdiffdelta=c()
+cryptokvalueresultsnetdiffdelta=c()
+cryptoratiovalueresultsnetdiffdelta=c()
+rotaalphavalueresultsnetdiffdelta=c()
+rotaNfiftyvalueresultsnetdiffdelta=c()
+rotaratiovalueresultsnetdiffdelta=c()
+campalphavalueresultsnetdiffdelta=c()
+campNfiftyvalueresultsnetdiffdelta=c()
+campratiovalueresultsnetdiffdelta=c()
+
+##
+
+exposurewaterdelta=c()
+backgroundwaterdelta=c()
+ecolilevelwaterdelta=c()
+logreductionwaterdelta=c()
+drinkingwaterwaterdelta=c()
+airexchangewaterdelta=c()
+volumewaterdelta=c()
+heatvaluewaterdelta=c()
+emissionfactorwaterdelta=c() 
+stovepowerwaterdelta=c()
+efficiencywaterdelta=c()
+energywaterdelta=c()
+agewaterdelta=c()
+cryptokvaluewaterdelta=c()
+cryptoratiovaluewaterdelta=c()
+rotaalphavaluewaterdelta=c() 
+rotaNfiftyvaluewaterdelta=c()
+rotaratiovaluewaterdelta=c()
+campalphavaluewaterdelta=c()
+campNfiftyvaluewaterdelta=c()
+campratiovaluewaterdelta=c()
+
+
+exposureairdelta=c()
+backgroundairdelta=c()
+ecolilevelairdelta=c()
+logreductionairdelta=c()
+drinkingwaterairdelta=c()
+airexchangeairdelta=c()
+volumeairdelta=c()
+heatvalueairdelta=c()
+emissionfactorairdelta=c() 
+stovepowerairdelta=c()
+efficiencyairdelta=c()
+energyairdelta=c()
+ageairdelta=c()
+cryptokvalueairdelta=c()
+cryptoratiovalueairdelta=c()
+rotaalphavalueairdelta=c() 
+rotaNfiftyvalueairdelta=c()
+rotaratiovalueairdelta=c()
+campalphavalueairdelta=c()
+campNfiftyvalueairdelta=c()
+campratiovalueairdelta=c()
+########
 ###check
 
 exposureresultscheck=uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
@@ -262,7 +390,11 @@ campratiovalueresultscheck=uncertaintyfunction(exposureunc[2],backgroundunc[2],e
 
 for (i in uncertaintyseq)
 {
+print("i")
+print(i)
 exposureresultsi=uncertaintyfunction(exposureunc[i],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+print("exposureresultsi")
+print(exposureresultsi)
 backgroundresultsi=uncertaintyfunction(exposureunc[2],backgroundunc[i],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
 ecolilevelresultsi=uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[i],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
 logreductionresultsi=uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[i],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
@@ -285,6 +417,28 @@ rotaratiovalueresultsi=uncertaintyfunction(exposureunc[2],backgroundunc[2],ecoli
 campalphavalueresultsi=uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[i],campNfiftyvalueunc[2],campratiovalueunc[2])
 campNfiftyvalueresultsi=uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[i],campratiovalueunc[2])
 campratiovalueresultsi=uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[i])
+
+exposureresultsnetdiff[i]=exposureresultsi[0]#uncertaintyfunction(exposureunc[i],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+backgroundresultsnetdiff[i]=backgroundresultsi[0] #uncertaintyfunction(exposureunc[2],backgroundunc[i],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+ecolilevelresultsnetdiff[i]=ecolilevelresultsi[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[i],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+logreductionresultsnetdiff[i]=logreductionresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[i],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+drinkingwaterresultsnetdiff[i]=drinkingwaterresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[i],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+airexchangeresultsnetdiff[i]=airexchangeresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[i],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+volumeresultsnetdiff[i]=volumeresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[i],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+heatvalueresultsnetdiff[i]=heatvalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[i],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+emissionfactorresultsnetdiff[i]=emissionfactorresultsi[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[i],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+stovepowerresultsnetdiff[i]=stovepowerresultsi[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[i],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+efficiencyresultsnetdiff[i]=efficiencyresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[i],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+energyresultsnetdiff[i]=energyresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[i],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+ageresultsnetdiff[i]=ageresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[i],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+cryptokvalueresultsnetdiff[i]=cryptokvalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[i],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+cryptoratiovalueresultsnetdiff[i]=cryptoratiovalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[i],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+rotaalphavalueresultsnetdiff[i]=rotaalphavalueresultsi[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[i],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+rotaNfiftyvalueresultsnetdiff[i]=rotaNfiftyvalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[i],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+rotaratiovalueresultsnetdiff[i]=rotaratiovalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[i],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+campalphavalueresultsnetdiff[i]=campalphavalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[i],campNfiftyvalueunc[2],campratiovalueunc[2])
+campNfiftyvalueresultsnetdiff[i]=campNfiftyvalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[i],campratiovalueunc[2])
+campratiovalueresultsnetdiff[i]=campratiovalueresultsi[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[i])
 
 exposureresults[i]=exposureresultsi[1]#uncertaintyfunction(exposureunc[i],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
 backgroundresults[i]=backgroundresultsi[1] #uncertaintyfunction(exposureunc[2],backgroundunc[i],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
@@ -353,43 +507,144 @@ campNfiftyvalueair[i]=campNfiftyvalueresultsi[3]
 campratiovalueair[i]=campratiovalueresultsi[3]
 
 }
+
+####################################
+###added this section 2/5/2025
+for (i in uncertaintyseq)
+{
+  exposureresultsnetdiffdelta[i]=exposureresultsnetdiff[i]-exposureresultsnetdiff[0]#uncertaintyfunction(exposureunc[i],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  backgroundresultsnetdiffdelta[i]=backgroundresultsnetdiff[i]-backgroundresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[i],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  ecolilevelresultsnetdiffdelta[i]=ecolilevelresultsnetdiff[i]-ecolilevelresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[i],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  logreductionresultsnetdiffdelta[i]=logreductionresultsnetdiff[i]-logreductionresultsnetdiff[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[i],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  drinkingwaterresultsnetdiffdelta[i]=drinkingwaterresultsnetdiff[i]-drinkingwaterresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[i],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  airexchangeresultsnetdiffdelta[i]=airexchangeresultsnetdiff[i]-airexchangeresultsnetdiff[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[i],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  volumeresultsnetdiffdelta[i]=volumeresultsnetdiff[i]-volumeresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[i],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  heatvalueresultsnetdiffdelta[i]=heatvalueresultsnetdiff[i]-heatvalueresultsnetdiff[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[i],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  emissionfactorresultsnetdiffdelta[i]=emissionfactorresultsnetdiff[i]-emissionfactorresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[i],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  stovepowerresultsnetdiffdelta[i]=stovepowerresultsnetdiff[i]-stovepowerresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[i],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  efficiencyresultsnetdiffdelta[i]=efficiencyresultsnetdiff[i]-efficiencyresultsnetdiff[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[i],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  energyresultsnetdiffdelta[i]=energyresultsnetdiff[i]-energyresultsnetdiff[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[i],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  ageresultsnetdiffdelta[i]=ageresultsnetdiff[i]-ageresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[i],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  cryptokvalueresultsnetdiffdelta[i]=cryptokvalueresultsnetdiff[i]-cryptokvalueresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[i],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  cryptoratiovalueresultsnetdiffdelta[i]=cryptoratiovalueresultsnetdiff[i]-cryptoratiovalueresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[i],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  rotaalphavalueresultsnetdiffdelta[i]=rotaalphavalueresultsnetdiff[i]-rotaalphavalueresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[i],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  rotaNfiftyvalueresultsnetdiffdelta[i]=rotaNfiftyvalueresultsnetdiff[i]-rotaNfiftyvalueresultsnetdiff[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[i],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  rotaratiovalueresultsnetdiffdelta[i]=rotaratiovalueresultsnetdiff[i]-rotaratiovalueresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[i],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  campalphavalueresultsnetdiffdelta[i]=campalphavalueresultsnetdiff[i]-campalphavalueresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[i],campNfiftyvalueunc[2],campratiovalueunc[2])
+  campNfiftyvalueresultsnetdiffdelta[i]=campNfiftyvalueresultsnetdiff[i]-campNfiftyvalueresultsnetdiff[0]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[i],campratiovalueunc[2])
+  campratiovalueresultsnetdiffdelta[i]=campratiovalueresultsnetdiff[i]-campratiovalueresultsnetdiff[0] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[i])
+  
+  
+  exposureresultsdelta[i]=exposureresults[i]-exposureresults[2]#uncertaintyfunction(exposureunc[i],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  backgroundresultsdelta[i]=backgroundresults[i]-backgroundresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[i],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  ecolilevelresultsdelta[i]=ecolilevelresults[i]-ecolilevelresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[i],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  logreductionresultsdelta[i]=logreductionresults[i]-logreductionresults[2]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[i],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  drinkingwaterresultsdelta[i]=drinkingwaterresults[i]-drinkingwaterresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[i],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  airexchangeresultsdelta[i]=airexchangeresults[i]-airexchangeresults[2]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[i],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  volumeresultsdelta[i]=volumeresults[i]-volumeresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[i],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  heatvalueresultsdelta[i]=heatvalueresults[i]-heatvalueresults[2]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[i],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  emissionfactorresultsdelta[i]=emissionfactorresults[i]-emissionfactorresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[i],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  stovepowerresultsdelta[i]=stovepowerresults[i]-stovepowerresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[i],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  efficiencyresultsdelta[i]=efficiencyresults[i]-efficiencyresults[2]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[i],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  energyresultsdelta[i]=energyresults[i]-energyresults[2]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[i],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  ageresultsdelta[i]=ageresults[i]-ageresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[i],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  cryptokvalueresultsdelta[i]=cryptokvalueresults[i]-cryptokvalueresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[i],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  cryptoratiovalueresultsdelta[i]=cryptoratiovalueresults[i]-cryptoratiovalueresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[i],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  rotaalphavalueresultsdelta[i]=rotaalphavalueresults[i]-rotaalphavalueresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[i],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  rotaNfiftyvalueresultsdelta[i]=rotaNfiftyvalueresults[i]-rotaNfiftyvalueresults[2]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[i],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  rotaratiovalueresultsdelta[i]=rotaratiovalueresults[i]-rotaratiovalueresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[i],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[2])
+  campalphavalueresultsdelta[i]=campalphavalueresults[i]-campalphavalueresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[i],campNfiftyvalueunc[2],campratiovalueunc[2])
+  campNfiftyvalueresultsdelta[i]=campNfiftyvalueresults[i]-campNfiftyvalueresults[2]#uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[i],campratiovalueunc[2])
+  campratiovalueresultsdelta[i]=campratiovalueresults[i]-campratiovalueresults[2] #uncertaintyfunction(exposureunc[2],backgroundunc[2],ecolilevelunc[2],logreductionunc[2],drinkingwaterunc[2],airexchangeunc[2],volumeunc[2],heatvalueunc[2],emissionfactorunc[2],stovepowerunc[2],efficiencyunc[2],energyunc[2],ageatdeathunc[2],cryptokvalueunc[2],cryptoratiovalueunc[2],rotaalphavalueunc[2],rotaNfiftyvalueunc[2],rotaratiovalueunc[2],campalphavalueunc[2],campNfiftyvalueunc[2],campratiovalueunc[i])
+  
+  exposurewaterdelta[i]=exposurewater[i]-exposurewater[2]
+  backgroundwaterdelta[i]=backgroundwater[i]-backgroundwater[2] 
+  ecolilevelwaterdelta[i]=ecolilevelwater[i]-ecolilevelwater[2]
+  logreductionwaterdelta[i]=logreductionwater[i]-logreductionwater[2]
+  drinkingwaterwaterdelta[i]=drinkingwaterwater[i]-drinkingwaterwater[2]
+  airexchangewaterdelta[i]=airexchangewater[i]-airexchangewater[2]
+  volumewaterdelta[i]=volumewater[i]-volumewater[2]
+  heatvaluewaterdelta[i]=heatvaluewater[i]-heatvaluewater[2]
+  emissionfactorwaterdelta[i]=emissionfactorwater[i]-emissionfactorwater[2] 
+  stovepowerwaterdelta[i]=stovepowerwater[i]-stovepowerwater[2]
+  efficiencywaterdelta[i]=efficiencywater[i]-efficiencywater[2]
+  energywaterdelta[i]=energywater[i]-energywater[2]
+  agewaterdelta[i]=agewater[i]-agewater[2]
+  cryptokvaluewaterdelta[i]=cryptokvaluewater[i]-cryptokvaluewater[2]
+  cryptoratiovaluewaterdelta[i]=cryptoratiovaluewater[i]-cryptoratiovaluewater[2]
+  rotaalphavaluewaterdelta[i]=rotaalphavaluewater[i]-rotaalphavaluewater[2] 
+  rotaNfiftyvaluewaterdelta[i]=rotaNfiftyvaluewater[i]-rotaNfiftyvaluewater[2]
+  rotaratiovaluewaterdelta[i]=rotaratiovaluewater[i]-rotaratiovaluewater[2]
+  campalphavaluewaterdelta[i]=campalphavaluewater[i]-campalphavaluewater[2]
+  campNfiftyvaluewaterdelta[i]=campNfiftyvaluewater[i]-campNfiftyvaluewater[2]
+  campratiovaluewaterdelta[i]=campratiovaluewater[i]-campratiovaluewater[2]
+  
+  exposureairdelta[i]=exposureair[i]-exposureair[2]
+  backgroundairdelta[i]=backgroundair[i]-backgroundair[2] 
+  ecolilevelairdelta[i]=ecolilevelair[i]-ecolilevelair[2]
+  logreductionairdelta[i]=logreductionair[i]-logreductionair[2]
+  drinkingwaterairdelta[i]=drinkingwaterair[i]-drinkingwaterair[2]
+  airexchangeairdelta[i]=airexchangeair[i]-airexchangeair[2]
+  volumeairdelta[i]=volumeair[i]-volumeair[2]
+  heatvalueairdelta[i]=heatvalueair[i]-heatvalueair[2]
+  emissionfactorairdelta[i]=emissionfactorair[i]-emissionfactorair[2]
+  stovepowerairdelta[i]=stovepowerair[i]-stovepowerair[2]
+  efficiencyairdelta[i]=efficiencyair[i]-efficiencyair[2]
+  energyairdelta[i]=energyair[i]-energyair[2]
+  ageairdelta[i]=ageair[i]-ageair[2]
+  cryptokvalueairdelta[i]=cryptokvalueair[i]-cryptokvalueair[2]
+  cryptoratiovalueairdelta[i]=cryptoratiovalueair[i]-cryptoratiovalueair[2]
+  rotaalphavalueairdelta[i]=rotaalphavalueair[i]-rotaalphavalueair[2]
+  rotaNfiftyvalueairdelta[i]=rotaNfiftyvalueair[i]-rotaNfiftyvalueair[2]
+  rotaratiovalueairdelta[i]=rotaratiovalueair[i]-rotaratiovalueair[2]
+  campalphavalueairdelta[i]=campalphavalueair[i]-campalphavalueair[2]
+  campNfiftyvalueairdelta[i]=campNfiftyvalueair[i]-campNfiftyvalueair[2]
+  campratiovalueairdelta[i]=campratiovalueair[i]-campratiovalueair[2] 
+  
+
+}
+###############################3 #end Feb 5 2024 addition
+
+
+####
 xaxis=c(2,3,4)
-plot(xaxis, exposureresults, xaxt="n",type="b", col="green", lwd=5, pch=15, xlab="variation", ylab="Net Change in DALYs",ylim=c(-5,100),xlim=c(-0.25,5))
-lines(xaxis, backgroundresults, type="b", col="red", lwd=2, pch=19)
-lines(xaxis, ecolilevelresults, type="b", col="yellow", lwd=2, pch=19)
-lines(xaxis, logreductionresults, type="b", col="blue", lwd=2, pch=19)
-lines(xaxis, drinkingwaterresults, type="b", col="purple", lwd=2, pch=19)
-lines(xaxis, airexchangeresults, type="b", col="black", lwd=2, pch=19)
-lines(xaxis, volumeresults, type="b", col="gray", lwd=2, pch=19)
-lines(xaxis, heatvalueresults, type="b", col="pink", lwd=2, pch=19)
-lines(xaxis, emissionfactorresults, type="b", col="coral", lwd=2, pch=19)
-lines(xaxis, stovepowerresults, type="b", col="magenta", lwd=2, pch=19)
-lines(xaxis, efficiencyresults, type="b", col="skyblue", lwd=2, pch=19)
-lines(xaxis, energyresults, type="b", col="deepskyblue", lwd=2, pch=19)
-lines(xaxis, ageresults, type="b", col="aquamarine", lwd=2, pch=19)
-lines(xaxis, cryptokvalueresults, type="b", col="bisque4", lwd=2, pch=19)
-lines(xaxis, cryptoratiovalueresults, type="b", col="deeppink", lwd=2, pch=19)
-lines(xaxis, rotaalphavalueresults, type="b", col="lightblue4", lwd=2, pch=19)
-lines(xaxis, rotaNfiftyvalueresults, type="b", col="mediumseagreen", lwd=2, pch=19)
-lines(xaxis, rotaratiovalueresults, type="b", col="salmon", lwd=2, pch=19)
-lines(xaxis, campalphavalueresults, type="b", col="thistle1", lwd=2, pch=19)
-lines(xaxis, campNfiftyvalueresults, type="b", col="slateblue4", lwd=2, pch=19)
-lines(xaxis, campratiovalueresults, type="b", col="violetred4", lwd=2, pch=19)
-title("Sensitivity Analysis-Net Difference in Dalys from Water Boiling")
+print("Start plot 1")
+plot(xaxis, exposureresultsdelta, xaxt="n",type="b", col="green", lwd=5, pch=15, xlab="Variation", ylab="Change in Total DALYs",ylim=c(-125,25),xlim=c(-0.25,5))
+lines(xaxis, backgroundresultsdelta, type="b", col="red", lwd=2, pch=19)
+lines(xaxis, ecolilevelresultsdelta, type="b", col="yellow", lwd=2, pch=19)
+lines(xaxis, logreductionresultsdelta, type="b", col="blue", lwd=2, pch=19)
+lines(xaxis, drinkingwaterresultsdelta, type="b", col="purple", lwd=2, pch=19)
+lines(xaxis, airexchangeresultsdelta, type="b", col="black", lwd=2, pch=19)
+lines(xaxis, volumeresultsdelta, type="b", col="gray", lwd=2, pch=19)
+lines(xaxis, heatvalueresultsdelta, type="b", col="pink", lwd=2, pch=19)
+lines(xaxis, emissionfactorresultsdelta, type="b", col="coral", lwd=2, pch=19)
+lines(xaxis, stovepowerresultsdelta, type="b", col="magenta", lwd=2, pch=19)
+lines(xaxis, efficiencyresultsdelta, type="b", col="skyblue", lwd=2, pch=19)
+lines(xaxis, energyresultsdelta, type="b", col="deepskyblue", lwd=2, pch=19)
+lines(xaxis, ageresultsdelta, type="b", col="aquamarine", lwd=2, pch=19)
+lines(xaxis, cryptokvalueresultsdelta, type="b", col="bisque4", lwd=2, pch=19)
+lines(xaxis, cryptoratiovalueresultsdelta, type="b", col="deeppink", lwd=2, pch=19)
+lines(xaxis, rotaalphavalueresultsdelta, type="b", col="lightblue4", lwd=2, pch=19)
+lines(xaxis, rotaNfiftyvalueresultsdelta, type="b", col="mediumseagreen", lwd=2, pch=19)
+lines(xaxis, rotaratiovalueresultsdelta, type="b", col="salmon", lwd=2, pch=19)
+lines(xaxis, campalphavalueresultsdelta, type="b", col="thistle1", lwd=2, pch=19)
+lines(xaxis, campNfiftyvalueresultsdelta, type="b", col="slateblue4", lwd=2, pch=19)
+lines(xaxis, campratiovalueresultsdelta, type="b", col="violetred4", lwd=2, pch=19)
+title("Sensitivity Analysis-Net Difference in Total DALYs",cex=0.5)
 axis(1,at=2:4,labels=c("Low Value","Average","High Value"))
 op <- par(cex = 2)
 legend("topleft", legend=c("exp to conc", "background","ecoli","log red.","water vol","air ex.","volume","heat v.","emission f.","stove power","eff.","energy","age","crypto k","crypto ratio","rota alpha","rota N","rota ratio","camp alpha","camp N", "camp ratio"),
-       col=c("green", "red","yellow","blue","purple","black","gray","pink","coral","magenta","skyblue","deepskyblue","aquamarine","bisque4","deeppink","lightblue4","mediumseagreen","Salmon","thistle1","slateblue4","violetred4"), lty=1:2, cex=0.8)
+       col=c("green", "red","yellow","blue","purple","black","gray","pink","coral","magenta","skyblue","deepskyblue","aquamarine","bisque4","deeppink","lightblue4","mediumseagreen","Salmon","thistle1","slateblue4","violetred4"), lty=1:2, cex=0.5)
 #legend(0,2.8, lwd=c(5,2), col=c("green","red"), pch=c(15,19), y.intersp=1.5)
 
 #plot(1:10, xaxt = "n", xlab='Some Letters')
 #axis(1, at=1:10, labels=letters[1:10])
 
-plot(xaxis, ecolilevelwater, xaxt="n",type="b", col="red", lwd=5, pch=15, xlab="variation", ylab="Net Change in DALYs for Water",ylim=c(-70,2),xlim=c(-0.25,5))
+plot(xaxis, ecolilevelwaterdelta, xaxt="n",type="b", col="red", lwd=5, pch=15, xlab="Variation", ylab="Change in Water DALYs",ylim=c(-200,2),xlim=c(-0.25,5))
 #lines(xaxis, backgroundresults, type="b", col="red", lwd=2, pch=19)
 #lines(xaxis, ecolilevelresults, type="b", col="yellow", lwd=2, pch=19)
-lines(xaxis, logreductionwater, type="b", col="yellow", lwd=2, pch=19)
-lines(xaxis, drinkingwaterwater, type="b", col="black", lwd=2, pch=19)
+lines(xaxis, logreductionwaterdelta, type="b", col="yellow", lwd=2, pch=19)
+lines(xaxis, drinkingwaterwaterdelta, type="b", col="black", lwd=2, pch=19)
 #lines(xaxis, airexchangeresults, type="b", col="black", lwd=2, pch=19)
 #lines(xaxis, volumeresults, type="b", col="gray", lwd=2, pch=19)
 #lines(xaxis, heatvalueresults, type="b", col="pink", lwd=2, pch=19)
@@ -397,7 +652,7 @@ lines(xaxis, drinkingwaterwater, type="b", col="black", lwd=2, pch=19)
 #lines(xaxis, stovepowerresults, type="b", col="magenta", lwd=2, pch=19)
 #lines(xaxis, efficiencyresults, type="b", col="skyblue", lwd=2, pch=19)
 #lines(xaxis, energyresults, type="b", col="deepskyblue", lwd=2, pch=19)
-lines(xaxis, agewater, type="b", col="orange", lwd=2, pch=19)
+lines(xaxis, agewaterdelta, type="b", col="orange", lwd=2, pch=19)
 #lines(xaxis, cryptokvaluewater, type="b", col="blue", lwd=2, pch=19)
 #lines(xaxis, cryptoratiovaluewater, type="b", col="green", lwd=2, pch=19)
 #lines(xaxis, rotaalphavaluewater, type="b", col="royalblue", lwd=2, pch=19)
@@ -406,12 +661,12 @@ lines(xaxis, agewater, type="b", col="orange", lwd=2, pch=19)
 #lines(xaxis, campalphavaluewater, type="b", col="navy", lwd=2, pch=19)
 #lines(xaxis, campNfiftyvaluewater, type="b", col="slateblue4", lwd=2, pch=19)
 #lines(xaxis, campratiovaluewater, type="b", col="seagreen", lwd=2, pch=19)
-title("Sensitivity Analysis-Net Difference in Dalys from Water Boiling")
+title("Sensitivity Analysis-Net Difference in Water DALYs",cex=0.4)
 op <- par(cex = 2)
 axis(1,at=2:4,labels=c("Low Value","Average","High Value"))
-legend("topleft",legend=c("ecoli","log red.","water vol","age"),col=c("red","yellow","black","orange"),lty=1:3,cex=0.8)
+legend("topleft",legend=c("ecoli","log red.","water vol","age"),col=c("red","yellow","black","orange"),lty=1:3,cex=0.5)
 
-plot(xaxis, cryptokvaluewater, xaxt="n",type="b", col="orange", lwd=5, pch=15, xlab="variation", ylab="Net Change in DALYs for Water",ylim=c(-50,2),xlim=c(-0.25,5))
+plot(xaxis, cryptokvaluewaterdelta, xaxt="n",type="b", col="orange", lwd=5, pch=15, xlab="Variation", ylab="Change in Water DALYs",ylim=c(-100,2),xlim=c(-0.25,5))
 #lines(xaxis, backgroundresults, type="b", col="red", lwd=2, pch=19)
 #lines(xaxis, ecolilevelresults, type="b", col="yellow", lwd=2, pch=19)
 #lines(xaxis, logreductionwater, type="b", col="yellow", lwd=2, pch=19)
@@ -425,31 +680,31 @@ plot(xaxis, cryptokvaluewater, xaxt="n",type="b", col="orange", lwd=5, pch=15, x
 #lines(xaxis, energyresults, type="b", col="deepskyblue", lwd=2, pch=19)
 #lines(xaxis, ageresults, type="b", col="orange", lwd=2, pch=19)
 #lines(xaxis, cryptokvaluewater, type="b", col="blue", lwd=2, pch=19)
-lines(xaxis, cryptoratiovaluewater, type="b", col="green", lwd=2, pch=19)
-lines(xaxis, rotaalphavaluewater, type="b", col="royalblue", lwd=2, pch=19)
-lines(xaxis, rotaNfiftyvaluewater, type="b", col="powderblue", lwd=2, pch=19)
-lines(xaxis, rotaratiovaluewater, type="b", col="yellowgreen", lwd=2, pch=19)
-lines(xaxis, campalphavaluewater, type="b", col="navy", lwd=2, pch=19)
-lines(xaxis, campNfiftyvaluewater, type="b", col="slateblue4", lwd=2, pch=19)
-lines(xaxis, campratiovaluewater, type="b", col="red", lwd=2, pch=19)
-title("Sensitivity Analysis-Net Difference in Dalys from Water Boiling")
+lines(xaxis, cryptoratiovaluewaterdelta, type="b", col="green", lwd=2, pch=19)
+lines(xaxis, rotaalphavaluewaterdelta, type="b", col="royalblue", lwd=2, pch=19)
+lines(xaxis, rotaNfiftyvaluewaterdelta, type="b", col="powderblue", lwd=2, pch=19)
+lines(xaxis, rotaratiovaluewaterdelta, type="b", col="yellowgreen", lwd=2, pch=19)
+lines(xaxis, campalphavaluewaterdelta, type="b", col="navy", lwd=2, pch=19)
+lines(xaxis, campNfiftyvaluewaterdelta, type="b", col="slateblue4", lwd=2, pch=19)
+lines(xaxis, campratiovaluewaterdelta, type="b", col="red", lwd=2, pch=19)#http://127.0.0.1:29759/graphics/b4987376-b69b-40af-b517-56496c82c33d.png
+title("Sensitivity Analysis-Net Difference in Water DALYs","Focus on Pathogen Parameters",cex=0.5)
 axis(1,at=2:4,labels=c("Low Value","Average","High Value"))
 op <- par(cex = 2)
 legend("topleft",legend=c("crypto k value","crypto ratio value","rota alpha value","rota N fifty value","rota ratio value","camp alpha value","camp Nfifty","camp ratio"),
-       col=c("orange","green","royalblue","powderblue","yellowgreen","navy","slateblue4","red"),lty=1:3,cex=0.8)
+       col=c("orange","green","royalblue","powderblue","yellowgreen","navy","slateblue4","red"),lty=1:3,cex=0.5)
 
-plot(xaxis, backgroundair, xaxt="n",type="b", col="orange", lwd=5, pch=15, xlab="Variation", ylab="Net Change in DALYs for Air",ylim=c(0,18),xlim=c(-0.25,5))
+plot(xaxis, backgroundairdelta, xaxt="n",type="b", col="orange", lwd=5, pch=15, xlab="Variation", ylab="Change in Air DALYs",ylim=c(-10,15),xlim=c(-0.25,5))
 #lines(xaxis, backgroundresults, type="b", col="red", lwd=2, pch=19)
 #lines(xaxis, ecolilevelresults, type="b", col="yellow", lwd=2, pch=19)
 #lines(xaxis, logreductionwater, type="b", col="yellow", lwd=2, pch=19)
-lines(xaxis, drinkingwaterair, type="b", col="black", lwd=2, pch=19)
-lines(xaxis, airexchangeair, type="b", col="blue", lwd=2, pch=19)
-lines(xaxis, volumeair, type="b", col="gray", lwd=2, pch=19)
-lines(xaxis, heatvalueair, type="b", col="pink", lwd=2, pch=19)
-lines(xaxis, emissionfactorair, type="b", col="coral", lwd=2, pch=19)
-lines(xaxis, stovepowerair, type="b", col="magenta", lwd=2, pch=19)
-lines(xaxis, efficiencyair, type="b", col="skyblue", lwd=2, pch=19)
-lines(xaxis, energyair, type="b", col="green", lwd=2, pch=19)
+lines(xaxis, drinkingwaterairdelta, type="b", col="black", lwd=2, pch=19)
+lines(xaxis, airexchangeairdelta, type="b", col="blue", lwd=2, pch=19)
+lines(xaxis, volumeairdelta, type="b", col="gray", lwd=2, pch=19)
+lines(xaxis, heatvalueairdelta, type="b", col="pink", lwd=2, pch=19)
+lines(xaxis, emissionfactorairdelta, type="b", col="coral", lwd=2, pch=19)
+lines(xaxis, stovepowerairdelta, type="b", col="magenta", lwd=2, pch=19)
+lines(xaxis, efficiencyairdelta, type="b", col="skyblue", lwd=2, pch=19)
+lines(xaxis, energyairdelta, type="b", col="green", lwd=2, pch=19)
 #lines(xaxis, ageresults, type="b", col="orange", lwd=2, pch=19)
 #lines(xaxis, cryptokvaluewater, type="b", col="blue", lwd=2, pch=19)
 #lines(xaxis, cryptoratiovaluewater, type="b", col="green", lwd=2, pch=19)
@@ -459,8 +714,49 @@ lines(xaxis, energyair, type="b", col="green", lwd=2, pch=19)
 #lines(xaxis, campalphavaluewater, type="b", col="navy", lwd=2, pch=19)
 #lines(xaxis, campNfiftyvaluewater, type="b", col="slateblue4", lwd=2, pch=19)
 #lines(xaxis, campratiovaluewater, type="b", col="red", lwd=2, pch=19)
-title("Sensitivity Analysis-Difference in Air DALYs from Water Boiling")
+title("Sensitivity Analysis-Difference in Air DALYs",cex=0.5)
 axis(1,at=2:4,labels=c("Low Value","Average","High Value"))
 op <- par(cex = 2)
 legend("bottomleft",legend=c("background","water volume","air exchange","volume","heating value","emission factor","Stove Power","Efficiency","Cooking energy"),
-       col=c("orange","black","blue","gray","pink","coral","magenta","skyblue","green"),lty=1:3,cex=0.8)
+       col=c("orange","black","blue","gray","pink","coral","magenta","skyblue","green"),lty=1:3,cex=0.5)
+
+### start plot 0
+
+print("checks")
+print(exposureresultsnetdiffdelta)
+print(backgroundresultsnetdiffdelta)
+print(ecolilevelresultsnetdiffdelta)
+print(logreducationresultsnetdiffdelta)
+print(drinkingwaterresultsnetdiffdelta)
+xaxis=c(2,3,4)
+print("Start plot 1")
+plot(xaxis, exposureresultsnetdiffdelta, xaxt="n",type="b", col="green", lwd=5, pch=15, xlab="Variation", ylab="Net Change in DALYs",ylim=c(-50,100),xlim=c(-0.25,5))
+lines(xaxis, backgroundresultsnetdiffdelta, type="b", col="red", lwd=2, pch=19)
+lines(xaxis, ecolilevelresultsnetdiffdelta, type="b", col="yellow", lwd=2, pch=19)
+lines(xaxis, logreductionresultsnetdiffdelta, type="b", col="blue", lwd=2, pch=19)
+lines(xaxis, drinkingwaterresultsnetdiffdelta, type="b", col="purple", lwd=2, pch=19)
+lines(xaxis, airexchangeresultsnetdiffdelta, type="b", col="black", lwd=2, pch=19)
+lines(xaxis, volumeresultsnetdiffdelta, type="b", col="gray", lwd=2, pch=19)
+lines(xaxis, heatvalueresultsnetdiffdelta, type="b", col="pink", lwd=2, pch=19)
+lines(xaxis, emissionfactorresultsnetdiffdelta, type="b", col="coral", lwd=2, pch=19)
+lines(xaxis, stovepowerresultsnetdiffdelta, type="b", col="magenta", lwd=2, pch=19)
+lines(xaxis, efficiencyresultsnetdiffdelta, type="b", col="skyblue", lwd=2, pch=19)
+lines(xaxis, energyresultsnetdiffdelta, type="b", col="deepskyblue", lwd=2, pch=19)
+lines(xaxis, ageresultsnetdiffdelta, type="b", col="aquamarine", lwd=2, pch=19)
+lines(xaxis, cryptokvalueresultsnetdiffdelta, type="b", col="bisque4", lwd=2, pch=19)
+lines(xaxis, cryptoratiovalueresultsnetdiffdelta, type="b", col="deeppink", lwd=2, pch=19)
+lines(xaxis, rotaalphavalueresultsnetdiffdelta, type="b", col="lightblue4", lwd=2, pch=19)
+lines(xaxis, rotaNfiftyvalueresultsnetdiffdelta, type="b", col="mediumseagreen", lwd=2, pch=19)
+lines(xaxis, rotaratiovalueresultsnetdiffdelta, type="b", col="salmon", lwd=2, pch=19)
+lines(xaxis, campalphavalueresultsnetdiffdelta, type="b", col="thistle1", lwd=2, pch=19)
+lines(xaxis, campNfiftyvalueresultsnetdiffdelta, type="b", col="slateblue4", lwd=2, pch=19)
+lines(xaxis, campratiovalueresultsnetdiffdelta, type="b", col="violetred4", lwd=2, pch=19)
+title("Sensitivity Analysis-Net Difference in Total Dalys from Water Boiling",cex=0.5)
+axis(1,at=2:4,labels=c("Low Value","Average","High Value"))
+op <- par(cex = 2)
+legend("topleft", legend=c("exp to conc", "background","ecoli","log red.","water vol","air ex.","volume","heat v.","emission f.","stove power","eff.","energy","age","crypto k","crypto ratio","rota alpha","rota N","rota ratio","camp alpha","camp N", "camp ratio"),
+       col=c("green", "red","yellow","blue","purple","black","gray","pink","coral","magenta","skyblue","deepskyblue","aquamarine","bisque4","deeppink","lightblue4","mediumseagreen","Salmon","thistle1","slateblue4","violetred4"), lty=1:2, cex=0.3)
+#legend(0,2.8, lwd=c(5,2), col=c("green","red"), pch=c(15,19), y.intersp=1.5)
+
+#plot(1:10, xaxt = "n", xlab='Some Letters')
+####

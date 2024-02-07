@@ -1,7 +1,6 @@
 
 rm(list = ls())
 setwd("C:/Users/emily/Dropbox/Air WASH/Air-WASH/")
-setwd("C:/Users/emily/Dropbox/Air WASH/Air-WASH/")
 
 #source("Packages.R")
 source("Libraries.R")

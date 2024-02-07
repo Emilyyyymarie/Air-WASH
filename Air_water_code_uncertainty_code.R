@@ -68,7 +68,7 @@ waterDALYresults=waterDALYs(drinkingwateroneperson,waterqualityseq,ecolilogreduc
 deltawater=waterDALYresults-waterDALYresultsbaseline
 
 
-netdifference=deltaaircooking-deltawater
+netdifference=deltaaircooking+deltawater
 resultsequence=c(netdifference,deltawater,deltaaircooking,deltaairwaterheatingonly) #remove to simplify
 return(resultsequence)
 
