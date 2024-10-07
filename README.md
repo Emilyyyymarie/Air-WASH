@@ -1,10 +1,13 @@
-# Air and WASH Health Risk comparison
+# Air and WASH Health Risk Comparison
 
 ## Introduction
-This code in R is written to compare the health risks from drinking water and indoor air pollution when boiling drinking water with various types of fuels. It can be run for various countries. Right now, data to run for two focus countries, Uganda and Vietnam, is provided. Data for additional countries can be added.
+This code in R is written to compare the health risks from drinking water and indoor air pollution when boiling drinking water with various types of fuels. The health risks are quantified using air pollution and drinking water disability adjusted life years (DALYs).  It can be run for various countries. Right now, data to run for two focus countries, Uganda and Vietnam, is provided. Data for additional countries can be added.
 
 ## Authors
-Emily Floess, Ayse Ercumen, Angela Harris, Andrew Grieshop, NC State University
+Emily Floess, Ayse Ercumen, Angela Harris, Andrew Grieshop, North Carolina State University
+
+## Related Publication
+"Do the Health Benefits of Boiling Drinking Water Outweigh the Negative Impacts of Increased Indoor Air Pollution Exposure?"
  
 ## Country Level Inputs
 A folder is created for each country.
@@ -14,19 +17,19 @@ Inside the folder the following files are contained:
 3) DALYs under 5
 4) household demographics
 5) population
-The data for these files comes from the GBD
+The data for these files comes from the Global Burden of Disease (Institute for Health Metrics and Evaluation) (https://www.healthdata.org/research-analysis/gbd)
 
 ## Required Packages & Libraries
 Packages.R contains the required packages for the code. Only needs to be run once.
 Libraries.R contains the required libraries for the code. Only needs to be run once.
 
 ## Health Files
-Files containing data on ALRI, COPD, IHD, LC and stroke are provided in the health folder
+Files containing data on ALRI, COPD, IHD, LC and stroke are provided in the health folder.
 
 ## Running the code
 Air_WASH_Master_Script is used to run the code. 
 Examples are given for Uganda and Vietnam, adults and children.
-In this , you can set the following:
+In this file you can set the following:
 1) Number of Monte Carlo iterations (currently 1000)
 2) Population of concern (currently 10,000)
 3) Country (ie Uganda)
@@ -40,7 +43,7 @@ Once this is set, this file calls the Air_water_code_person which calculates the
 
 ## Dependent R Files
 There are several necessary dependent files:
-### countryspecificvariables
+### countryspecificvariables.R
 This file reads in the following:
 1) population data
 2) household data (number of adults, children, etc)
@@ -50,16 +53,16 @@ This file reads in the following:
 6) Country Specific DALYs
 7) The relative risk parameters for ALRI, COPD, IHD, LC and Stroke
 
-### CountryPopulation
+### CountryPopulation.R
 This file generates a random distribution of the ages of people in a country
 
 ### infectionfunctions
 This calculates the DALYs for Rotavirus, cryptosporidium, and campylobacter
 
-### IndoorAirPollution
+### IndoorAirPollution.R
 This calculates the 24 hour kitchen PM2.5 concentration uses the air pollution box model
 
-### RelativeRisk
+### RelativeRisk.R
 This code calculates the DALYs for LC, ALRI, COPD, Stroke, and IHD
 
 ## Navigating Results
@@ -70,12 +73,12 @@ There are files divided by adults and children including:
 3) DALYs from Drinking water
 
 ## Plotting
-Master_Script_Plotting runs the code to produce the plots
+Master_Script_Plotting.R runs the code to produce the plots
 Given a country, this calls the file AirWASHPlots_Indicatedcountry_adult_and_child
 This reads in the results, and produces plots of the indoor air pollution, drinking water DALYs, IAP DALYs, and plot of the DALYs difference.
 
 ## Uncertainty
-Air_WASH_Master_Uncertainty runs the code to produce the uncertainty outputs.
+Air_WASH_Master_Uncertainty.R runs the code to produce the uncertainty outputs.
 For a given number of runs, input population, country of interest, and person of interest, it runs the UncertaintyAnalysis_distribution file. This file has the given distributions to run the uncertainty. The uncertainty ranges are calculated for the low, average and high values of the distributions, and then plotted.
 
 
