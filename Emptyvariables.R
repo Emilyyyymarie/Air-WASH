@@ -1,16 +1,4 @@
-#define
-
-#ecolilogreductionvaluelist=seq(0,7.5,by=0.25) # or to 7.5 # to make log normal graph
-#logreductionseq=seq(1,length(ecolilogreductionvaluelist),by=1)
-
-#old ones not using
-#ecolilevel= logspace(0,log(21200,base=10),n=15)
-#waterqualityseq=seq(1,length(ecolilevel),by=1)
-#waterqualityindex=seq(1,length(ecolilevel),by=1)
-##plotwaterquality=c(0,10,100,1000)
-#plotwaterqualityseq=seq(1,length(plotwaterquality),by=1)
-#longlogreduction=seq(0,8,by=0.25)
-#longlogreductionseq=seq(1,length(longlogreduction),by=1)
+#Variables used in code
 
 indexvalue =c()
 
