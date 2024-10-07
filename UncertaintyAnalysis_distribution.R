@@ -604,8 +604,17 @@ for (i in uncertaintyseq)
 
 }
 ###############################3 #end Feb 5 2024 addition
-
-
+#writing to csv
+xaxis=c(2,3,4)
+uncertaintydataplot1 <- data.frame(
+  xaxis, exposureresultsdelta, backgroundresultsdelta,ecolilevelresultsdelta,ecolilevelresultsdelta,logreductionresultsdelta,
+  drinkingwaterresultsdelta, airexchangeresultsdelta,volumeresultsdelta,heatvalueresultsdelta,emissionfactorresultsdelta,
+  stovepowerresultsdelta,efficiencyresultsdelta,energyresultsdelta,ageresultsdelta,cryptokvalueresultsdelta,cryptoratiovalueresultsdelta,
+  rotaalphavalueresultsdelta,rotaNfiftyvalueresultsdelta,rotaratiovalueresultsdelta,campalphavalueresultsdelta,campNfiftyvalueresultsdelta,
+  campratiovalueresultsdelta
+)
+write.csv(uncertaintydataplot1, "Results/uncertaintydataplot1_Sensitivity_Analysis_Net_Difference_in_Total_DALYs.csv")
+print("start plotting!!!")
 ####
 xaxis=c(2,3,4)
 print("Start plot 1")
@@ -637,6 +646,7 @@ legend("topleft", legend=c("exp to conc", "background","ecoli","log red.","water
        col=c("green", "red","yellow","blue","purple","black","gray","pink","coral","magenta","skyblue","deepskyblue","aquamarine","bisque4","deeppink","lightblue4","mediumseagreen","Salmon","thistle1","slateblue4","violetred4"), lty=1:2, cex=0.5)
 #legend(0,2.8, lwd=c(5,2), col=c("green","red"), pch=c(15,19), y.intersp=1.5)
 
+
 #plot(1:10, xaxt = "n", xlab='Some Letters')
 #axis(1, at=1:10, labels=letters[1:10])
 
@@ -664,7 +674,13 @@ lines(xaxis, agewaterdelta, type="b", col="orange", lwd=2, pch=19)
 title("Sensitivity Analysis-Net Difference in Water DALYs",cex=0.4)
 op <- par(cex = 2)
 axis(1,at=2:4,labels=c("Low Value","Average","High Value"))
+text(locator(), labels = c("E. coli", "Log Reduction","Drinking Water Volume","Age"))
 legend("topleft",legend=c("ecoli","log red.","water vol","age"),col=c("red","yellow","black","orange"),lty=1:3,cex=0.5)
+
+#writing to csv
+uncertaintydataplot2 <- data.frame(
+  xaxis, ecolilevelwaterdelta,logreductionwaterdelta,drinkingwaterwaterdelta,agewaterdelta)
+write.csv(uncertaintydataplot2, "Results/uncertaintydataplot2_Sensitivity_Analysis_Net Difference_in_Water_DALYs.csv")
 
 plot(xaxis, cryptokvaluewaterdelta, xaxt="n",type="b", col="orange", lwd=5, pch=15, xlab="Variation", ylab="Change in Water DALYs",ylim=c(-100,2),xlim=c(-0.25,5))
 #lines(xaxis, backgroundresults, type="b", col="red", lwd=2, pch=19)
@@ -693,6 +709,12 @@ op <- par(cex = 2)
 legend("topleft",legend=c("crypto k value","crypto ratio value","rota alpha value","rota N fifty value","rota ratio value","camp alpha value","camp Nfifty","camp ratio"),
        col=c("orange","green","royalblue","powderblue","yellowgreen","navy","slateblue4","red"),lty=1:3,cex=0.5)
 
+#writing to csv
+uncertaintydataplot3 <- data.frame(
+  xaxis, cryptokvaluewaterdelta,cryptoratiovaluewaterdelta,rotaalphavaluewaterdelta,rotaNfiftyvaluewaterdelta,
+  rotaratiovaluewaterdelta,campalphavaluewaterdelta,campNfiftyvaluewaterdelta,campratiovaluewaterdelta)
+write.csv(uncertaintydataplot3, "Results/uncertaintydataplot3_Sensitivity_Analysis_Net_Difference_in_Water_DALYs_Focus_on_Pathogen.csv")
+
 plot(xaxis, backgroundairdelta, xaxt="n",type="b", col="orange", lwd=5, pch=15, xlab="Variation", ylab="Change in Air DALYs",ylim=c(-10,15),xlim=c(-0.25,5))
 #lines(xaxis, backgroundresults, type="b", col="red", lwd=2, pch=19)
 #lines(xaxis, ecolilevelresults, type="b", col="yellow", lwd=2, pch=19)
@@ -720,17 +742,23 @@ op <- par(cex = 2)
 legend("bottomleft",legend=c("background","water volume","air exchange","volume","heating value","emission factor","Stove Power","Efficiency","Cooking energy"),
        col=c("orange","black","blue","gray","pink","coral","magenta","skyblue","green"),lty=1:3,cex=0.5)
 
+#write to csv
+uncertaintydataplot4 <- data.frame(
+  xaxis, backgroundairdelta,drinkingwaterairdelta,airexchangeairdelta,volumeairdelta,heatvalueairdelta,emissionfactorairdelta,
+  stovepowerairdelta,efficiencyairdelta,energyairdelta)
+write.csv(uncertaintydataplot4, "Results/uncertaintydataplot4_Sensitivity_Analysis_Difference_in_Air_DALYs.csv")
 ### start plot 0
 
 print("checks")
 print(exposureresultsnetdiffdelta)
 print(backgroundresultsnetdiffdelta)
 print(ecolilevelresultsnetdiffdelta)
-print(logreducationresultsnetdiffdelta)
+#print(logreducationresultsnetdiffdelta)
 print(drinkingwaterresultsnetdiffdelta)
 xaxis=c(2,3,4)
 print("Start plot 1")
-plot(xaxis, exposureresultsnetdiffdelta, xaxt="n",type="b", col="green", lwd=5, pch=15, xlab="Variation", ylab="Net Change in DALYs",ylim=c(-50,100),xlim=c(-0.25,5))
+plot(xaxis, exposureresultsnetdiffdelta, xaxt="n",type="b", col="green", lwd=5, pch=15, xlab="Variation", ylab="Net Change in DALYs")
+#plot(xaxis, exposureresultsnetdiffdelta, xaxt="n",type="b", col="green", lwd=5, pch=15, xlab="Variation", ylab="Net Change in DALYs",ylim=c(-50,100),xlim=c(-0.25,5))
 lines(xaxis, backgroundresultsnetdiffdelta, type="b", col="red", lwd=2, pch=19)
 lines(xaxis, ecolilevelresultsnetdiffdelta, type="b", col="yellow", lwd=2, pch=19)
 lines(xaxis, logreductionresultsnetdiffdelta, type="b", col="blue", lwd=2, pch=19)
@@ -756,6 +784,18 @@ axis(1,at=2:4,labels=c("Low Value","Average","High Value"))
 op <- par(cex = 2)
 legend("topleft", legend=c("exp to conc", "background","ecoli","log red.","water vol","air ex.","volume","heat v.","emission f.","stove power","eff.","energy","age","crypto k","crypto ratio","rota alpha","rota N","rota ratio","camp alpha","camp N", "camp ratio"),
        col=c("green", "red","yellow","blue","purple","black","gray","pink","coral","magenta","skyblue","deepskyblue","aquamarine","bisque4","deeppink","lightblue4","mediumseagreen","Salmon","thistle1","slateblue4","violetred4"), lty=1:2, cex=0.3)
+
+print("end plot 1")
+print("final list")
+uncertaintydataplot5 <- data.frame(
+  xaxis,exposureresultsnetdiffdelta,backgroundresultsnetdiffdelta,ecolilevelresultsnetdiffdelta,
+  logreductionresultsnetdiffdelta,drinkingwaterresultsnetdiffdelta,airexchangeresultsnetdiffdelta,volumeresultsnetdiffdelta,
+  heatvalueresultsnetdiffdelta,emissionfactorresultsnetdiffdelta,stovepowerresultsnetdiffdelta,
+  efficiencyresultsnetdiffdelta,energyresultsnetdiffdelta,ageresultsnetdiffdelta,
+  cryptokvalueresultsnetdiffdelta,cryptoratiovalueresultsnetdiffdelta,rotaalphavalueresultsnetdiffdelta,
+  rotaNfiftyvalueresultsnetdiffdelta,rotaratiovalueresultsnetdiffdelta,campalphavalueresultsnetdiffdelta,
+  campNfiftyvalueresultsnetdiffdelta,campratiovalueresultsnetdiffdelta)
+write.csv(uncertaintydataplot5, "Results/uncertaintydataplot5Sensitivity_Analysis_Net_Difference_in_Total_Dalys_from_Water_Boiling.csv")
 #legend(0,2.8, lwd=c(5,2), col=c("green","red"), pch=c(15,19), y.intersp=1.5)
 
 #plot(1:10, xaxt = "n", xlab='Some Letters')

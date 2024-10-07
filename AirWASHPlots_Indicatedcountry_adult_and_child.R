@@ -17,16 +17,20 @@ runs=1000
 print(country)
 #read in values from stored excel
 
+print("read variables")
 source("Plot_read_variables.R")
+print("plot calculations")
 source("plot_calculations.R")
-
+print("plot calculations total")
 source("Plot_calculations_Total.R")
+print("Plot calculations difference total")
 source("Plot_calculations_diff_total.R")
 #source("Plot_SD_calculations.R")
 print("generate totals")
 source("Plotting_Generate_Totals.R")
 print("end")
 
+print("Starting 24 Hour Kitchen PM2.5 Conc")
 ############# PLOT NUMBER ONE###########################
 
 ###############################################################
@@ -61,7 +65,7 @@ newplotnew<-ggplot(data=PMstovedataframe, aes(x=Stovenames, y=PMlevels, fill=Sto
   ylab("Avg 24-Hr Kitchen PM2.5 Conc. ug/m^3")+xlab("Stove Type")+scale_color_manual(values=c("green", "orange", "blue"))
 print(newplotnew)
 ##
-
+print("finish plot one")
 #########################
 
 
@@ -180,6 +184,14 @@ boilingbargroupsdtotal=c(boilingbarlrsdtotal,boilingbarmrsdtotal,boilingbarhrsdt
 Boiling_Log_Reduction_Value=c("6:Lab Level","2:Very Good", "1.8:Good", "1.5:Moderate","0.464:Low","0.048:Ineffective","0.0:No Boiling","-0.208:Worse than Source")
 boilingbargrouprisk=c(rep("LowRisk",8),rep("MediumRisk",8),rep("HighRisk",8))
 Boilingbardataframe=data.frame(boilingbargroup, boilingbargrouprisk,Boiling_Log_Reduction_Value,boilingbargroupsd)
+Boilingbardataframechild=data.frame(boilingbargroupchild, boilingbargrouprisk,Boiling_Log_Reduction_Value,boilingbargroupsdchild)
+Boilingbardataframetotal=data.frame(boilingbargrouptotal, boilingbargrouprisk,Boiling_Log_Reduction_Value,boilingbargroupsdtotal)
+
+write.csv(Boilingbardataframe,file.path(currentresultspath, paste("Boiling_DALYs_adults",country,".csv",sep="")),row.names=FALSE)
+write.csv(Boilingbardataframechild,file.path(currentresultspath, paste("Boiling_DALYs_child",country,".csv",sep="")),row.names=FALSE)
+write.csv(Boilingbardataframetotal,file.path(currentresultspath,paste("Boiling_DALYs_total",country,".csv",sep="")),row.names=FALSE)
+
+
 print("check4")
 #keep
 newplotnewboiling<-ggplot(data=Boilingbardataframe, aes(x=boilingbargrouprisk, y=boilingbargroup, fill=Boiling_Log_Reduction_Value))+
@@ -581,7 +593,7 @@ jpeg(file=file.path(currentresultspath,"adultchildfinalplot_v3.jpg"), res=600, w
      type="windows", antialias="cleartype")
 newplotnewboilingdiffhello<-ggplot(data=Boilingbardataframetotal, aes(x=boilingbargrouprisk, y=boilingbargrouptotal, fill=Category))+
   geom_bar(stat="identity", position=position_dodge(),fill="white")+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(size = 20),axis.text=element_text(size=20),legend.key=element_blank(),plot.title = element_text(hjust = 0.5))+ggtitle("") +
-  ylab("Change in DALYs from Boiling (10,000 ppl)")+xlab("Source Water Risk Level in MPN E. coli/100mL")+geom_errorbar( aes(ymin=boilingbargrouptotal-uncertaintyalltotalnew, ymax=boilingbargrouptotal+uncertaintyalltotalnew), width=.2,position=position_dodge(.9))+geom_bar(data=Boilingbardataframetotal, aes(x=boilingbargrouprisk, y=boilingbargrouptotal, fill=Category),stat="identity", position=position_dodge(),alpha=0.4)+geom_bar(data=Boilingbardataframe, aes(x=boilingbargrouprisk, y=boilingbargroup, fill=Category),stat="identity", position=position_dodge(),alpha=0.9)+ scale_y_continuous(breaks=seq(-3000,600,200))
+  ylab("Change in DALYs from Boiling (10,000 ppl)")+xlab("Source Water Risk Level in MPN E. coli/100mL")+geom_errorbar( aes(ymin=boilingbargrouptotal-uncertaintyalltotalnew, ymax=boilingbargrouptotal+uncertaintyalltotalnew), width=.2,position=position_dodge(.9))+geom_bar(data=Boilingbardataframetotal, aes(x=boilingbargrouprisk, y=boilingbargrouptotal, fill=Category),stat="identity", position=position_dodge(),alpha=0.4)+geom_bar(data=Boilingbardataframe, aes(x=boilingbargrouprisk, y=boilingbargroup, fill=Category),stat="identity", position=position_dodge(),alpha=0.9)+ scale_y_continuous(breaks=seq(-3000,800,200))
 
 print(newplotnewboilingdiffhello)
 dev.off()
@@ -594,7 +606,7 @@ print(newplotnewboilingdiffhello)
 
 
 newplotnewnew<-ggplot(data=PMstovedataframetotal,aes(x=Stovenames,y=PMlevelstotal,fill=Stove_use))+ 
-  geom_bar(stat = 'identity',position="dodge",fill="white")+scale_fill_manual(values=redyellowblue)+ggtitle(paste(country)) +ylim(-10, 600)+
+  geom_bar(stat = 'identity',position="dodge",fill="white")+scale_fill_manual(values=redyellowblue)+ggtitle(paste(country)) +ylim(-10, 800)+
   ylab("Total DALYs for different stove types (10,000 ppl)")+xlab("Stove Type")+geom_errorbar(aes(ymin=PMlevelstotal-PMsdtotal, ymax=PMlevelstotal+PMsdtotal), width=.2,position=position_dodge(.9))+geom_bar(data=PMstovedataframe,aes(x=Stovenames,y=PMlevels,fill=Stove_use),stat="identity",position=position_dodge(),alpha=0.2)+geom_bar(data=PMstovedataframetotal, aes(x=Stovenames, y=PMlevelstotal, fill=Stove_use),stat="identity", position=position_dodge(),alpha=0.4)+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"),text = element_text(size = 20),axis.text=element_text(size=20),legend.key=element_blank(),plot.title = element_text(hjust = 0.5))
 print(newplotnewnew)
 

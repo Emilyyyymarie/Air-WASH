@@ -5,11 +5,97 @@ setwd("C:/Users/emily/Dropbox/Air WASH/Air-WASH")
 source("Libraries.R")
 
 #set working directory
+#########################
+print("Uganda child low")
+rm(list = ls())
+variable = c()
+print("define number seq")
+numberseq = seq(1,1000) #number of runs
+inputpopulation=10000
+country <- "Uganda"
+personofinterest="child"
+waterqualitylevel<-"low"
+currentpath <- "C:/Users/emily/Dropbox/Air WASH/Air-WASH/"
+currentresultspath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/Results/logremoval",country)
+currentcountrypath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/",country)
+source("Air_water_code_person_log_removal_wateronly.R")
 
+print("Uganda child medium")
+rm(list = ls())
+variable = c()
+print("define number seq")
+numberseq = seq(1,1000) #number of runs
+inputpopulation=10000
+country <- "Uganda"
+personofinterest="child"
+waterqualitylevel<-"medium"
+currentpath <- "C:/Users/emily/Dropbox/Air WASH/Air-WASH/"
+currentresultspath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/Results/logremoval",country)
+currentcountrypath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/",country)
+source("Air_water_code_person_log_removal_wateronly.R")
+
+print("Uganda child high")
+rm(list = ls())
+variable = c()
+print("define number seq")
+numberseq = seq(1,1000) #number of runs
+inputpopulation=10000
+country <- "Uganda"
+personofinterest="child"
+waterqualitylevel<-"high"
+currentpath <- "C:/Users/emily/Dropbox/Air WASH/Air-WASH/"
+currentresultspath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/Results/logremoval",country)
+currentcountrypath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/",country)
+source("Air_water_code_person_log_removal_wateronly.R")
+
+print("Uganda adult low")
+rm(list = ls())
+variable = c()
+print("define number seq")
+numberseq = seq(1,1000) #number of runs
+inputpopulation=10000
+country <- "Uganda"
+personofinterest="adult"
+waterqualitylevel<-"low"
+currentpath <- "C:/Users/emily/Dropbox/Air WASH/Air-WASH/"
+currentresultspath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/Results/logremoval",country)
+currentcountrypath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/",country)
+source("Air_water_code_person_log_removal_wateronly.R")
+
+print("Uganda adult medium")
+rm(list = ls())
+variable = c()
+print("define number seq")
+numberseq = seq(1,1000) #number of runs
+inputpopulation=10000
+country <- "Uganda"
+personofinterest="adult"
+waterqualitylevel<-"medium"
+currentpath <- "C:/Users/emily/Dropbox/Air WASH/Air-WASH/"
+currentresultspath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/Results/logremoval",country)
+currentcountrypath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/",country)
+source("Air_water_code_person_log_removal_wateronly.R")
+
+print("Uganda adult high")
+rm(list = ls())
+variable = c()
+print("define number seq")
+numberseq = seq(1,1000) #number of runs
+inputpopulation=10000
+country <- "Uganda"
+personofinterest="adult"
+waterqualitylevel<-"high"
+currentpath <- "C:/Users/emily/Dropbox/Air WASH/Air-WASH/"
+currentresultspath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/Results/logremoval",country)
+currentcountrypath <-file.path("C:/Users/emily/Dropbox/Air WASH/Air-WASH/",country)
+source("Air_water_code_person_log_removal_wateronly.R")
+print(stop)
+print(obdougbsodugbeousgbsoubf)
+#############################3
 print("Vietnam child low")
 rm(list = ls())
 variable = c()
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Vietnam"
@@ -28,7 +114,7 @@ print(" Vietnam child safe")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 country <- "Vietnam"
 personofinterest="child"
@@ -44,7 +130,7 @@ print("Vietnam child medium")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Vietnam"
@@ -61,7 +147,7 @@ print("Vietnam child high")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Vietnam"
@@ -81,7 +167,7 @@ print("Vietnam adult safe")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Vietnam"
@@ -99,7 +185,7 @@ print("Vietnam adult low")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Vietnam"
@@ -116,7 +202,7 @@ print("Vietnam adult medium")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Vietnam"
@@ -133,7 +219,7 @@ print("Vietnam adult high")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Vietnam"
@@ -151,7 +237,7 @@ print("Uganda child safe")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"
@@ -169,7 +255,7 @@ print("Uganda child low")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"
@@ -186,7 +272,7 @@ print("Uganda child medium")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"
@@ -203,7 +289,7 @@ print("Uganda child high")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"
@@ -221,7 +307,7 @@ print("Uganda adult safe")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"
@@ -239,7 +325,7 @@ print("Uganda adult low")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"
@@ -256,7 +342,7 @@ print("Uganda adult medium")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"
@@ -273,7 +359,7 @@ print("Uganda adult high")
 rm(list = ls())
 variable = c()
 print("define number seq")
-numberseq = seq(1,1000) #number of runs
+numberseq = seq(1,10000) #number of runs
 inputpopulation=10000
 
 country <- "Uganda"

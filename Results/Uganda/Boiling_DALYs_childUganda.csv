@@ -1,0 +1,25 @@
+"boilingbargroupchild","boilingbargrouprisk","Boiling_Log_Reduction_Value","boilingbargroupsdchild"
+19.02,"LowRisk","6:Lab Level",20.53
+28.5,"LowRisk","2:Very Good",40.67
+29.8,"LowRisk","1.8:Good",43.32
+32.31,"LowRisk","1.5:Moderate",48.1
+52.18,"LowRisk","0.464:Low",77.04
+70.73,"LowRisk","0.048:Ineffective",96.42
+73.56,"LowRisk","0.0:No Boiling",98.96
+87.97,"LowRisk","-0.208:Worse than Source",110.69
+20.34,"MediumRisk","6:Lab Level",20.15
+38.92,"MediumRisk","2:Very Good",57.17
+42.81,"MediumRisk","1.8:Good",63.24
+50.66,"MediumRisk","1.5:Moderate",73.82
+115.01,"MediumRisk","0.464:Low",127.91
+170.15,"MediumRisk","0.048:Ineffective",155.73
+178,"MediumRisk","0.0:No Boiling",158.88
+215.84,"MediumRisk","-0.208:Worse than Source",171.8
+21.99,"HighRisk","6:Lab Level",21.92
+71.72,"HighRisk","2:Very Good",97.02
+83.92,"HighRisk","1.8:Good",107.29
+108.21,"HighRisk","1.5:Moderate",123.91
+273.29,"HighRisk","0.464:Low",179.04
+376.04,"HighRisk","0.048:Ineffective",187.88
+388.67,"HighRisk","0.0:No Boiling",188.11
+444.03,"HighRisk","-0.208:Worse than Source",187.42

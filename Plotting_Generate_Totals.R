@@ -11,6 +11,7 @@ waterDALYsnegativeboilingdiffadulthigh<-read.csv(file.path(currentresultspath,pa
 waterDALYsnegativeboilingdiffchildlow<-read.csv(file.path(currentresultspath,paste("waterDALYsnegativeboilingdiff",country,"childlow.csv",sep="")),header=TRUE)
 waterDALYsnegativeboilingdiffchildmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsnegativeboilingdiff",country,"childmedium.csv",sep="")),header=TRUE)
 waterDALYsnegativeboilingdiffchildhigh<-read.csv(file.path(currentresultspath,paste("waterDALYsnegativeboilingdiff",country,"childhigh.csv",sep="")),header=TRUE)
+
 waterDALYsnegativeboilingvaluesadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYsnegativeboilingvalues",country,"adultlow.csv",sep="")),header=TRUE)
 waterDALYsnegativeboilingvaluesadultmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsnegativeboilingvalues",country,"adultmedium.csv",sep="")),header=TRUE)
 waterDALYsnegativeboilingvaluesadulthigh<-read.csv(file.path(currentresultspath,paste("waterDALYsnegativeboilingvalues",country,"adulthigh.csv",sep="")),header=TRUE)
@@ -21,6 +22,7 @@ print("adding negative")
 waterDALYsnegativeboilingvaluesTOTALlow=unlist(arrange(waterDALYsnegativeboilingvaluesadultlow)+arrange(waterDALYsnegativeboilingvaluesadultlow))
 waterDALYsnegativeboilingvaluesTOTALmedium=unlist(arrange(waterDALYsnegativeboilingvaluesadultlow)+arrange(waterDALYsnegativeboilingvaluesadultmedium))
 waterDALYsnegativeboilingvaluesTOTALhigh=unlist(arrange(waterDALYsnegativeboilingvaluesadultlow)+arrange(waterDALYsnegativeboilingvaluesadulthigh))
+
 waterDALYsnegativeboilingdiffTOTALlow=unlist(arrange(waterDALYsnegativeboilingdiffadultlow)+arrange(waterDALYsnegativeboilingdiffadultlow))
 waterDALYsnegativeboilingdiffTOTALmedium=unlist(arrange(waterDALYsnegativeboilingdiffadultlow)+arrange(waterDALYsnegativeboilingdiffadultmedium))
 waterDALYsnegativeboilingdiffTOTALhigh=unlist(arrange(waterDALYsnegativeboilingdiffadultlow)+arrange(waterDALYsnegativeboilingdiffadulthigh))
@@ -41,6 +43,7 @@ negativeptdiffhrtotalsd=sd(waterDALYsnegativeboilingdiffTOTALhigh)
 #######################################################################
 print("end negative boiling")
 #lab boiling
+print("lab boiling")
 waterDALYslabboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYslabboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
 waterDALYslabboilingdiffadultmedium<-read.csv(file.path(currentresultspath,paste("waterDALYslabboilingdiff",country,"adultmedium.csv",sep="")),header=TRUE)
 waterDALYslabboilingdiffadulthigh<-read.csv(file.path(currentresultspath,paste("waterDALYslabboilingdiff",country,"adulthigh.csv",sep="")),header=TRUE)
@@ -72,9 +75,10 @@ lablevelptdiffhrtotal=mean(waterDALYslabboilingdiffTOTALhigh)
 lablevelptdifflrtotalsd=sd(waterDALYslabboilingdiffTOTALlow)
 lablevelptdiffmrtotalsd=sd(waterDALYslabboilingdiffTOTALmedium)
 lablevelptdiffhrtotalsd=sd(waterDALYslabboilingdiffTOTALhigh)
-
+print("end lab boiling")
 ########################################
 
+print("Very good boiling")
 #very good/good
 waterDALYsgoodboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYsgoodboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
 waterDALYsgoodboilingdiffadultmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsgoodboilingdiff",country,"adultmedium.csv",sep="")),header=TRUE)
@@ -107,12 +111,12 @@ verygoodptdiffhrtotal=mean(waterDALYsgoodboilingdiffTOTALhigh)
 verygoodptdifflrtotalsd=sd(waterDALYsgoodboilingdiffTOTALlow)
 verygoodptdiffmrtotalsd=sd(waterDALYsgoodboilingdiffTOTALmedium)
 verygoodptdiffhrtotalsd=sd(waterDALYsgoodboilingdiffTOTALhigh)
-
+print("end very good boiling")
 ########################################
 
 
 ########################################
-
+print("moderate boiling")
 #good/moderate
 waterDALYsmoderateboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYsmoderateboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
 waterDALYsmoderateboilingdiffadultmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsmoderateboilingdiff",country,"adultmedium.csv",sep="")),header=TRUE)
@@ -145,45 +149,10 @@ goodptdiffhrtotal=mean(waterDALYsmoderateboilingdiffTOTALhigh)
 goodptdifflrtotalsd=sd(waterDALYsmoderateboilingdiffTOTALlow)
 goodptdiffmrtotalsd=sd(waterDALYsmoderateboilingdiffTOTALmedium)
 goodptdiffhrtotalsd=sd(waterDALYsmoderateboilingdiffTOTALhigh)
-
+print("end moderate boiling")
 ########################################
 
-########################################
-
-#moderate/ineffective boiling
-waterDALYsineffectiveboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingdiffadultmedium<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"adultmedium.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingdiffadulthigh<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"adulthigh.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingdiffchildlow<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"childlow.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingdiffchildmedium<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"childmedium.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingdiffchildhigh<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"childhigh.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingvaluesadultlow<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingvalues",country,"adultlow.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingvaluesadultmedium<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingvalues",country,"adultmedium.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingvaluesadulthigh<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingvalues",country,"adulthigh.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingvalueschildlow<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingvalues",country,"childlow.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingvalueschildmedium<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingvalues",country,"childmedium.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingvalueschildhigh<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingvalues",country,"childhigh.csv",sep="")),header=TRUE)
-waterDALYsineffectiveboilingvaluesTOTALlow=unlist(arrange(waterDALYsineffectiveboilingvaluesadultlow)+arrange(waterDALYsineffectiveboilingvaluesadultlow))
-waterDALYsineffectiveboilingvaluesTOTALmedium=unlist(arrange(waterDALYsineffectiveboilingvaluesadultlow)+arrange(waterDALYsineffectiveboilingvaluesadultmedium))
-waterDALYsineffectiveboilingvaluesTOTALhigh=unlist(arrange(waterDALYsineffectiveboilingvaluesadultlow)+arrange(waterDALYsineffectiveboilingvaluesadulthigh))
-waterDALYsineffectiveboilingdiffTOTALlow=unlist(arrange(waterDALYsineffectiveboilingdiffadultlow)+arrange(waterDALYsineffectiveboilingdiffadultlow))
-waterDALYsineffectiveboilingdiffTOTALmedium=unlist(arrange(waterDALYsineffectiveboilingdiffadultlow)+arrange(waterDALYsineffectiveboilingdiffadultmedium))
-waterDALYsineffectiveboilingdiffTOTALhigh=unlist(arrange(waterDALYsineffectiveboilingdiffadultlow)+arrange(waterDALYsineffectiveboilingdiffadulthigh))
-
-moderateptlrtotal=mean(waterDALYsineffectiveboilingdiffTOTALlow)
-moderateptmrtotal=mean(waterDALYsineffectiveboilingvaluesTOTALmedium)
-moderatepthrtotal=mean(waterDALYsineffectiveboilingdiffTOTALhigh)
-moderateptlrsdtotal=sd(waterDALYsineffectiveboilingdiffTOTALlow)
-moderateptmrsdtotal=sd(waterDALYsineffectiveboilingvaluesTOTALmedium)
-moderatepthrsdtotal=sd(waterDALYsineffectiveboilingdiffTOTALhigh)
-moderateptdifflrtotal=mean(waterDALYsineffectiveboilingdiffTOTALlow)
-moderateptdiffmrtotal=mean(waterDALYsineffectiveboilingdiffTOTALmedium)
-moderateptdiffhrtotal=mean(waterDALYsineffectiveboilingdiffTOTALhigh)
-moderateptdifflrtotalsd=sd(waterDALYsineffectiveboilingdiffTOTALlow)
-moderateptdiffmrtotalsd=sd(waterDALYsineffectiveboilingdiffTOTALmedium)
-moderateptdiffhrtotalsd=sd(waterDALYsineffectiveboilingdiffTOTALhigh)
-
-########################################
+#####################################################################
 
 #loweffective/worse
 waterDALYsworseboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYsworseboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
@@ -223,6 +192,7 @@ loweffectiveptdiffhrtotalsd=sd(waterDALYsworseboilingdiffTOTALhigh)
 ########################################
 
 #ineffective/badzero
+print("ineffective/bad zero")
 waterDALYsbadzeroboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYsbadzeroboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
 waterDALYsbadzeroboilingdiffadultmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsbadzeroboilingdiff",country,"adultmedium.csv",sep="")),header=TRUE)
 waterDALYsbadzeroboilingdiffadulthigh<-read.csv(file.path(currentresultspath,paste("waterDALYsbadzeroboilingdiff",country,"adulthigh.csv",sep="")),header=TRUE)
@@ -256,7 +226,7 @@ ineffectiveptdiffmrtotalsd=sd(waterDALYsbadzeroboilingdiffTOTALmedium)
 ineffectiveptdiffhrtotalsd=sd(waterDALYsbadzeroboilingdiffTOTALhigh)
 
 ########################################
-
+print("start ineffective/badzero")
 #ineffective/badzero
 waterDALYsnoboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYsnoboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
 waterDALYsnoboilingdiffadultmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsnoboilingdiff",country,"adultmedium.csv",sep="")),header=TRUE)
@@ -289,6 +259,52 @@ noboilingptdiffhrtotal=mean(waterDALYsnoboilingdiffTOTALhigh)
 noboilingptdifflrtotalsd=sd(waterDALYsnoboilingdiffTOTALlow)
 noboilingptdiffmrtotalsd=sd(waterDALYsnoboilingdiffTOTALmedium)
 noboilingptdiffhrtotalsd=sd(waterDALYsnoboilingdiffTOTALhigh)
-
+print("ineffective badzero")
 ########################################
 
+###########################3
+########################################
+
+print("start moderate/ineffective boiling")
+#this is the problem
+#moderate/ineffective boiling
+waterDALYsineffectiveboilingdiffadultlow<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"adultlow.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingdiffadultmedium<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"adultmedium.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingdiffadulthigh<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"adulthigh.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingdiffchildlow<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"childlow.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingdiffchildmedium<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"childmedium.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingdiffchildhigh<-read.csv(file.path(currentresultspath,paste("ineffectiveboilingdiff",country,"childhigh.csv",sep="")),header=TRUE)
+print("finish moderate/ineffective boiling diff")
+print("start reading ineffective boiling!!!")
+#proble is below
+
+waterDALYsineffectiveboilingvaluesadultmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsineffectiveboilingvalues",country,"adultmedium.csv",sep="")),header=TRUE)
+
+waterDALYsineffectiveboilingvaluesadultlow<-read.csv(file.path(currentresultspath,paste("waterDALYsineffectiveboilingvalues",country,"adultlow.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingvaluesadulthigh<-read.csv(file.path(currentresultspath,paste("waterDALYsineffectiveboilingvalues",country,"adulthigh.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingvalueschildlow<-read.csv(file.path(currentresultspath,paste("waterDALYsineffectiveboilingvalues",country,"childlow.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingvalueschildmedium<-read.csv(file.path(currentresultspath,paste("waterDALYsineffectiveboilingvalues",country,"childmedium.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingvalueschildhigh<-read.csv(file.path(currentresultspath,paste("waterDALYsineffectiveboilingvalues",country,"childhigh.csv",sep="")),header=TRUE)
+waterDALYsineffectiveboilingvaluesTOTALlow=unlist(arrange(waterDALYsineffectiveboilingvaluesadultlow)+arrange(waterDALYsineffectiveboilingvaluesadultlow))
+waterDALYsineffectiveboilingvaluesTOTALmedium=unlist(arrange(waterDALYsineffectiveboilingvaluesadultlow)+arrange(waterDALYsineffectiveboilingvaluesadultmedium))
+waterDALYsineffectiveboilingvaluesTOTALhigh=unlist(arrange(waterDALYsineffectiveboilingvaluesadultlow)+arrange(waterDALYsineffectiveboilingvaluesadulthigh))
+waterDALYsineffectiveboilingdiffTOTALlow=unlist(arrange(waterDALYsineffectiveboilingdiffadultlow)+arrange(waterDALYsineffectiveboilingdiffadultlow))
+waterDALYsineffectiveboilingdiffTOTALmedium=unlist(arrange(waterDALYsineffectiveboilingdiffadultlow)+arrange(waterDALYsineffectiveboilingdiffadultmedium))
+waterDALYsineffectiveboilingdiffTOTALhigh=unlist(arrange(waterDALYsineffectiveboilingdiffadultlow)+arrange(waterDALYsineffectiveboilingdiffadulthigh))
+print("end ineffective boiling first part")
+moderateptlrtotal=mean(waterDALYsineffectiveboilingdiffTOTALlow)
+moderateptmrtotal=mean(waterDALYsineffectiveboilingvaluesTOTALmedium)
+moderatepthrtotal=mean(waterDALYsineffectiveboilingdiffTOTALhigh)
+moderateptlrsdtotal=sd(waterDALYsineffectiveboilingdiffTOTALlow)
+moderateptmrsdtotal=sd(waterDALYsineffectiveboilingvaluesTOTALmedium)
+moderatepthrsdtotal=sd(waterDALYsineffectiveboilingdiffTOTALhigh)
+moderateptdifflrtotal=mean(waterDALYsineffectiveboilingdiffTOTALlow)
+moderateptdiffmrtotal=mean(waterDALYsineffectiveboilingdiffTOTALmedium)
+moderateptdiffhrtotal=mean(waterDALYsineffectiveboilingdiffTOTALhigh)
+moderateptdifflrtotalsd=sd(waterDALYsineffectiveboilingdiffTOTALlow)
+moderateptdiffmrtotalsd=sd(waterDALYsineffectiveboilingdiffTOTALmedium)
+moderateptdiffhrtotalsd=sd(waterDALYsineffectiveboilingdiffTOTALhigh)
+print("end ineffective boiling")
+########################################
+##########################################
+print("End all")

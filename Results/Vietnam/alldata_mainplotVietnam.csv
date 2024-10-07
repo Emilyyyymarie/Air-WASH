@@ -1,0 +1,26 @@
+"boilingbargrouptotal","boilingbargrouprisk","Category","uncertaintyalltotalnew"
+-385.328976421256,"A Low Risk","5    Lab Study LRV (6)",349.462555088479
+-325.411783423505,"A Low Risk","4    Best Field LRV (2)",308.56452106545
+-298.760909668476,"A Low Risk","3    Average Field LRV (1.5)",281.075406609371
+-156.895545439938,"A Low Risk","2    Low Field LRV (0.464)",134.595897695952
+-20.8001032392607,"A Low Risk","1    Ineffective Field LRV (0.048)",16.4009897788653
+-755.99475704578,"B Medium Risk","5    Lab Study LRV (6)",704.023193058482
+-657.848485731933,"B Medium Risk","4    Best Field LRV (2)",624.786126336648
+-600.760921664272,"B Medium Risk","3    Average Field LRV (1.5)",567.901544459395
+-296.58779334458,"B Medium Risk","2    Low Field LRV (0.464)",264.587527064708
+-36.8854563169274,"B Medium Risk","1    Ineffective Field LRV (0.048)",30.9908888923533
+-1372.27613069133,"C High Risk","5    Lab Study LRV (6)",893.325338558695
+-1167.5896118541,"C High Risk","4    Best Field LRV (2)",808.39434760637
+-1023.8615703467,"C High Risk","3    Average Field LRV (1.5)",731.479951728721
+-413.177806573651,"C High Risk","2    Low Field LRV (0.464)",329.490045303546
+-45.7609327180951,"C High Risk","1    Ineffective Field LRV (0.048)",37.1805026510945
+52,"D Boil+Cook","C.    Charcoal (Improved)",140.006450208553
+6,"D Boil+Cook","A.    LPG (Clean)",34.4494310548084
+29,"D Boil+Cook","B.    Gasifier (Improved)",86.3784840107767
+30,"D Boil+Cook","E.    Wood (Traditional)",97.4943593240142
+36,"D Boil+Cook","D.    Wood (Improved)",112.242897325399
+129,"E Boil Only","C.    Charcoal (Improved)",79.48
+3,"E Boil Only","A.    LPG (Clean)",10.46
+35,"E Boil Only","B.    Gasifier (Improved)",36.44
+491,"E Boil Only","E.    Wood (Traditional)",77.45
+423,"E Boil Only","D.    Wood (Improved)",87.26

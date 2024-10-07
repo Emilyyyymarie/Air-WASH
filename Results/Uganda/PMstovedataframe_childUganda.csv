@@ -1,0 +1,19 @@
+"Stovenames","Stove_use","PMlevelschild","PMsdchild"
+"A Electric","Water Heating",0,1
+"A Electric","Cooking",0,1
+"A Electric","Water Heating & Cooking",0,1
+"B LPG","Water Heating",2,2.22
+"B LPG","Cooking",2,3.56
+"B LPG","Water Heating & Cooking",3,4.67
+"C Gasifier","Water Heating",6,6
+"C Gasifier","Cooking",11,10.76
+"C Gasifier","Water Heating & Cooking",16,13.32
+"D Charcoal","Water Heating",23,17.36
+"D Charcoal","Cooking",36,23.79
+"D Charcoal","Water Heating & Cooking",48,25.38
+"E Imp. Wood","Water Heating",94,21.27
+"E Imp. Wood","Cooking",99,19.76
+"E Imp. Wood","Water Heating & Cooking",102,18.57
+"F Trad. Wood","Water Heating",102,18.8
+"F Trad. Wood","Cooking",104,18.56
+"F Trad. Wood","Water Heating & Cooking",105,18.53
